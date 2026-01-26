@@ -1,4 +1,5 @@
 import '../../scss/main.scss';
+import './swiper.js'
 
 
 console.log('Hello, VetCat!');

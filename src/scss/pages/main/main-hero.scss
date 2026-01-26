@@ -2,7 +2,7 @@
 @use '../../base/vars' as *;
 @use '../../mixins/respond-to.scss' as *;
 
-.main_hero {
+.main-hero {
     position: relative;
     background: linear-gradient(#E8FAFA,
             #DCF2E8);
@@ -74,6 +74,19 @@
             @include respond-to(tablet-l) {
                 font-size: 16px;
             }
+        }
+    }
+
+    &__svg-arrow {
+        position: relative;
+        bottom: -118px;
+
+        @include respond-to(laptop-m) {
+            bottom: -40px;
+        }
+
+        @include respond-to(tablet-l) {
+            display: none;
         }
     }
 }

@@ -1,0 +1,19 @@
+include ../../partials/mixins/ui/swiper/_swiper.pug
+include ../../partials/mixins/ui/cards/_text-card.pug
+
+.main-services 
+    .container-content
+        .main-services__header
+            .main-services__title
+                h2 Популярные услуги для ваших питомцев
+            .main-services__buttons 
+                button.button.button--contured 
+                    a(href="#") Смотреть все цены
+                button.button.button--green 
+                    a(href="#") Смотреть все услуги
+    .main-services__slider 
+        .container-content
+            +swiper('main-page-swiper')
+                each slide in textCardData
+                    .swiper-slide
+                        +text-card(slide)

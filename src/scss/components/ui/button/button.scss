@@ -27,6 +27,7 @@
 
     &--green {
         background-color: map.get($colors, 'primary');
+        color: map.get($colors, 'white1');
 
         &:hover,
         &:active {

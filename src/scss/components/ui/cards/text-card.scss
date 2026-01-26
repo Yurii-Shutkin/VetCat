@@ -1,0 +1,59 @@
+@use 'sass:map';
+@use '../../../base/vars' as *;
+
+.text-card {
+    padding: 28px 32px 0 32px;
+    width: 100%;
+    max-width: 344px;
+    height: 240px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #e8fafa 0%, #dcf2e8 100%);
+    margin: 0 auto;
+
+    &:hover {
+        background: map.get($colors, primary);
+
+        .text-card__title {
+            color: map.get($colors, white1);
+        }
+
+        .text-card__desc {
+            color: map.get($colors, white1);
+        }
+
+        .text-card__link {
+            display: block;
+        }
+
+        transition: all .3s ease;
+    }
+
+
+    &__title {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 120%;
+        color: map.get($colors, text1);
+        margin-bottom: 10px;
+    }
+
+    &__desc {
+        display: block;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: map.get($colors, text2);
+        margin-bottom: 33px;
+    }
+
+    &__link {
+        font-weight: 700;
+        display: none;
+        text-align: end;
+        color: map.get($colors, white1);
+    }
+
+    &__svg-arrow {
+        display: inline-block;
+    }
+}

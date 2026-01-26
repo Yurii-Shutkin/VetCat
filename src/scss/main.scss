@@ -2,6 +2,7 @@
 @use './pages/main/index.scss';
 @use './mixins/respond-to.scss' as *;
 @use './components/ui/button/button.scss';
+@use './components/ui/cards/text-card.scss';
 
 body {
     font-family: "Manrope", sans-serif;
@@ -32,7 +33,7 @@ body {
     }
 
     &-content {
-        padding: 0 0 0 254px;
+        padding: 0 253px 0 254px;
 
         @include respond-to(laptop-l) {
             padding: 0 60px;

@@ -11,6 +11,8 @@ const pages = fs
   .filter(dirent => dirent.isDirectory())
   .map(dirent => dirent.name);
 
+const textCardData = require('./src/pug/partials/data/cards/textCardData')
+
 module.exports = {
   mode: 'development',
 
@@ -38,6 +40,9 @@ module.exports = {
     ...pages.map(page => 
       new HtmlWebpackPlugin({
         template: path.resolve(PAGES_DIR, page, 'index.pug'),
+        templateParameters: {
+          textCardData: textCardData,
+        },
         filename: page === 'main' ? 'index.html' : `${page}/index.html`,
         chunks: [page],
       })
@@ -59,6 +64,10 @@ module.exports = {
         test: /\.pug$/,
         loader: 'pug-loader',
         options: { pretty: true }
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'], 
       },
       {
         test: /\.s[ac]ss$/i,
