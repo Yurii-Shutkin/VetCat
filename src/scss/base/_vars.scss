@@ -1,0 +1,32 @@
+@use 'sass:map';
+
+$colors: (
+    text1: #292d33,
+    text2: #51555a,
+    text3: #797c80,
+    text4: #bfbfbf,
+    primary: #1dc3b0,
+    dark-primary: #059e8c,
+    primary-2: #e31351,
+    bg2: #f5fbfc,
+    bg3: #eef3f7,
+    borders: #cfdfe5,
+    white1: #fff,
+    white2: #f7f7f7,
+    logo: #364b76,
+    services-icon: #086358,
+    search-marker: #ffe768,
+    darken: #192224,
+);
+
+$breakpoints: (
+    desktop: 1920px,
+    laptop-l: 1440px,
+    laptop-m: 1200px,
+    laptop: 992px,
+    tablet-l: 768px,
+    tablet: 576px,
+    mobile: 425px,
+    mobile-m: 375px,
+    mobile-s: 320px,
+);

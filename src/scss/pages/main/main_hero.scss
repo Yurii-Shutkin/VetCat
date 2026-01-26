@@ -1,0 +1,79 @@
+@use 'sass:map';
+@use '../../base/vars' as *;
+@use '../../mixins/respond-to.scss' as *;
+
+.main_hero {
+    position: relative;
+    background: linear-gradient(#E8FAFA,
+            #DCF2E8);
+    height: 656px;
+
+    @include respond-to(laptop-m) {
+        height: 450px;
+    }
+
+    &__bg-wrap {
+        position: absolute;
+        right: 0;
+
+        @media(max-width: 1640px) {
+            display: none;
+        }
+    }
+
+    &__content {
+        position: absolute;
+        padding-top: 113px;
+
+        @include respond-to(laptop-m) {
+            padding-top: 60px;
+        }
+
+        @include respond-to(mobile) {
+            padding-top: 40px;
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 64px;
+        line-height: 119%;
+        color: map.get($colors, text1);
+        width: 100%;
+        max-width: 712px;
+        margin-bottom: 33px;
+
+        @include respond-to(laptop-m) {
+            font-size: 45px;
+        }
+
+        @include respond-to(tablet-l) {
+            font-size: 30px;
+        }
+    }
+
+    &__rules {
+        ul {
+            list-style: circle;
+            list-style-type: square;
+            display: flex;
+            flex-direction: column;
+            margin-left: 21px;
+        }
+
+        &-item {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 180%;
+            color: map.get($colors, text1);
+
+            &::marker {
+                color: map.get($colors, primary)
+            }
+
+            @include respond-to(tablet-l) {
+                font-size: 16px;
+            }
+        }
+    }
+}

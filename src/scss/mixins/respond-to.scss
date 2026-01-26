@@ -1,0 +1,12 @@
+@use 'sass:map';
+@use '../base/_vars.scss';
+
+@mixin respond-to($breakpoint) {
+    $breakpoint-value: map.get(vars.$breakpoints, $breakpoint);
+
+    @media(max-width: $breakpoint-value) {
+        @content
+    }
+
+    ;
+}

@@ -1,0 +1,45 @@
+@use './reset.scss';
+@use './pages/main/index.scss';
+@use './mixins/respond-to.scss' as *;
+@use './components/ui/button/button.scss';
+
+body {
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    overflow-x: hidden;
+
+    &:has(.burger__line:checked) {
+        overflow: hidden;
+    }
+
+    &:has(.burger__line:checked) .overlay {
+        display: block;
+        z-index: 997;
+    }
+
+    &:has(.burger__line:checked) {
+        .sidebar {
+            transform: translateX(0);
+        }
+    }
+}
+
+.container {
+    padding: 98px 0 0 300px;
+
+    @include respond-to(laptop) {
+        padding: 98px 0 0 0;
+    }
+
+    &-content {
+        padding: 0 0 0 254px;
+
+        @include respond-to(laptop-l) {
+            padding: 0 60px;
+        }
+
+        @include respond-to(tablet) {
+            padding: 0 30px;
+        }
+    }
+}

@@ -1,0 +1,154 @@
+@use 'sass:map';
+@use '../../base/vars.scss' as *;
+@use '../../mixins/respond-to.scss' as *;
+
+.sidebar {
+    position: fixed;
+    background-color: map.get($colors, 'white1');
+    border: 1px solid map.get($colors, 'borders');
+    width: 100%;
+    max-width: 301px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: none;
+
+    @include respond-to('laptop') {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 100%;
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 998;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        padding: 148px 20px 51px 56px;
+        gap: 24px;
+        height: 100%;
+        font-size: 20px;
+        line-height: 120%;
+        font-weight: 600;
+        color: map.get($colors, 'text2');
+    }
+
+    &__item {
+        &:has(.sidebar__checkbox:checked) .sidebar__sub-list {
+            grid-template-rows: 1fr;
+            margin-bottom: 10px;
+            margin-top: 19px;
+            transition: margin .3s ease;
+        }
+
+        &:has(.sidebar__checkbox:checked) .sidebar__link-wrap {
+            color: map.get($colors, 'primary');
+        }
+
+        &:has(.sidebar__checkbox:checked) .sidebar__checkbox {
+            border-right: 2px solid transparent;
+            border-bottom: 2px solid map.get($colors, 'primary');
+            transform: rotate(0deg);
+
+            transition: all 0.3s ease;
+        }
+
+    }
+
+    &__link {
+        cursor: pointer;
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: map.get($colors, 'primary');
+        }
+    }
+
+    &__link-wrap {
+        display: flex;
+        transition: all 0.3s ease;
+
+        &:hover,
+        &:active,
+        &:focus {
+            .sidebar__link--select {
+                color: map.get($colors, 'primary');
+                transition: color 0.3s ease;
+            }
+        }
+    }
+
+    &__checkbox {
+        display: inline-block;
+        cursor: pointer;
+        margin-left: 8px;
+        width: 10px;
+        height: 10px;
+        border-right: 2px solid map.get($colors, 'text2');
+        border-bottom: 2px solid map.get($colors, 'text2');
+        transform: rotate(45deg);
+        margin-top: 4px;
+
+        transition: all 0.3s ease;
+    }
+
+    &__sub-list {
+        display: grid;
+        grid-template-rows: 0fr;
+        overflow: hidden;
+        flex-direction: column;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 125%;
+        color: map.get($colors, 'text2');
+        transition: grid-template-rows 0.3s ease;
+        transition: margin .3s ease;
+
+        &-inner {
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+    }
+
+    &__sublink {
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: map.get($colors, 'primary');
+        }
+    }
+
+    &__bottom {
+        background-color: map.get($colors, 'bg2');
+        padding: 52px 41px;
+        border-top: 1px solid map.get($colors, 'borders');
+        text-align: center;
+
+        &-title {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 80%;
+            color: map.get($colors, 'text1');
+            margin-bottom: 7px;
+            margin-left: -15px;
+        }
+
+        &-subtitle {
+            display: block;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 114%;
+            color: map.get($colors, 'text1');
+            margin-bottom: 25px;
+        }
+    }
+}

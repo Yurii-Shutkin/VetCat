@@ -1,0 +1,94 @@
+@use 'sass:map';
+@use '../../base/vars.scss' as *;
+@use '../../mixins/respond-to.scss' as *;
+
+.header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border: 1px solid map.get($colors, 'borders');
+    z-index: 999;
+
+    .logo {
+        padding: 16px 46px 24px 37px;
+        background: linear-gradient(#E8FAFA,
+                #DCF2E8);
+        width: 100%;
+        max-width: 300px;
+        border-right: 1px solid map.get($colors, 'borders');
+
+        @include respond-to('laptop') {
+            max-width: 100%;
+        }
+    }
+
+    .search {
+        width: 100%;
+        display: flex;
+        padding: 32px 40px;
+        background: map.get($colors, 'white1');
+
+        &-icon {
+            margin-right: 8px;
+        }
+
+        @include respond-to('laptop') {
+            display: none;
+        }
+    }
+
+    .info {
+        display: flex;
+        width: 100%;
+        max-width: 744px;
+        background-color: map.get($colors, 'bg2');
+
+        @include respond-to('laptop') {
+            display: none;
+        }
+
+        .locations {
+            display: flex;
+            padding: 19px 52px 41px 43px;
+            text-wrap: nowrap;
+            gap: 38px;
+            border-left: 1px solid map.get($colors, 'borders');
+
+            p {
+                font-weight: bold;
+                font-size: 14px;
+                margin-bottom: 2px;
+            }
+
+            span {
+                font-weight: normal;
+                font-size: 14px;
+            }
+
+            @include respond-to('laptop-l') {
+                display: none;
+            }
+        }
+
+        .phone {
+            padding: 24px 39px;
+            border-left: 1px solid map.get($colors, 'borders');
+            text-wrap: nowrap;
+
+            a {
+                display: block;
+                font-weight: bold;
+                font-size: 20px;
+                letter-spacing: -1.1px;
+                margin-bottom: 4px;
+            }
+
+            span {
+                font-weight: bold;
+                font-size: 16px;
+                color: map.get($colors, 'primary-2');
+            }
+        }
+    }
+}

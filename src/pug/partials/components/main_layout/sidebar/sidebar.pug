@@ -1,0 +1,39 @@
+aside.sidebar 
+    nav
+        ul.sidebar__list
+            li.sidebar__item
+                a.sidebar__link(href="/services") Наши услуги
+            li.sidebar__item
+                a.sidebar__link(href="/price") Стоимость
+            li.sidebar__item
+                a.sidebar__link(href="/team") Сотрудники
+            li.sidebar__item
+                a.sidebar__link(href="/schedule") График работы
+            li.sidebar__item
+                .sidebar__link-wrap
+                    label(for="about-select" class="sidebar__link sidebar__link--select" tabindex="0") О клинике
+                    input(type="checkbox", name="about-select" id="about-select" class="sidebar__checkbox")
+                ul.sidebar__sub-list
+                    .sidebar__sub-list-inner
+                        li.sidebar__sub-item
+                            a.sidebar__sublink(href="/about/mission") Наша миссия
+                        li.sidebar__sub-item
+                            a.sidebar__sublink(href="/about/gallery") Фотогалерея
+                        li.sidebar__sub-item
+                            a.sidebar__sublink(href="/about/reviews") Отзывы
+            li.sidebar__item
+                .sidebar__link-wrap
+                    label(for="useful-select" class="sidebar__link sidebar__link--select" tabindex="0") Полезное
+                    input(type="checkbox", name="useful-select" id="useful-select" class="sidebar__checkbox")        
+                ul.sidebar__sub-list 
+                    .sidebar__sub-list-inner
+                        li.sidebar__sub-item
+                            a.sidebar__sublink(href="/articles/tips") Истории пациентов
+                        li.sidebar__sub-item
+                            a.sidebar__sublink(href="/articles/news") Статьи
+            li.sidebar__item
+                a.sidebar__link(href="/contacts") Контакты
+    .sidebar__bottom
+        p.sidebar__bottom-title Работаем для вас
+        span.sidebar__bottom-subtitle ежедневно и круглосуточно
+        a.sidebar__bottom-link(href="#").button.button--primary Записаться на прием
