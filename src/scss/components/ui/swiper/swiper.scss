@@ -1,0 +1,74 @@
+@use 'sass:map';
+@use '../../../base/vars' as *;
+@use '../../../mixins/respond-to.scss' as *;
+
+.swiper {
+    &-container {
+        position: relative;
+    }
+
+    &-shadow-wrapper {
+        position: relative;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 100%;
+            max-width: 6px;
+            height: 100%;
+            border-radius: 100%;
+            filter: blur(12px);
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        &::before {
+            left: 0;
+            background: linear-gradient(to right,
+                    rgba(0, 0, 0, 1),
+                    transparent);
+        }
+
+        &::after {
+            right: 0;
+            background: linear-gradient(to left,
+                    rgba(0, 0, 0, 1),
+                    transparent);
+        }
+    }
+
+    &-button-next,
+    &-button-prev {
+        height: 30px;
+        color: map.get($colors, text1);
+    }
+
+    &-custom-arrows {
+        width: 100%;
+    }
+
+    &-custom-prev-arrow,
+    &-custom-next-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &-custom-prev-arrow {
+        left: -33px;
+
+        @include respond-to(tablet) {
+            left: -20px
+        }
+    }
+
+    &-custom-next-arrow {
+        right: -33px;
+
+        @include respond-to(tablet) {
+            right: -20px;
+        }
+    }
+}

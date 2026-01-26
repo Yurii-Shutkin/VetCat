@@ -3,6 +3,7 @@
 @use './mixins/respond-to.scss' as *;
 @use './components/ui/button/button.scss';
 @use './components/ui/cards/text-card.scss';
+@use './components/ui/swiper/swiper.scss';
 
 body {
     font-family: "Manrope", sans-serif;
