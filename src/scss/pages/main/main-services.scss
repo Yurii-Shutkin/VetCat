@@ -29,17 +29,6 @@
         @include respond-to(mobile-m) {
             margin-bottom: 15px;
         }
-
-        h2 {
-            font-weight: 700;
-            font-size: 48px;
-            line-height: 117%;
-            color: map.get($colors, text1);
-
-            @include respond-to(tablet) {
-                font-size: 42px;
-            }
-        }
     }
 
     &__buttons {

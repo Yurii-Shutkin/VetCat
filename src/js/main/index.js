@@ -1,5 +1,6 @@
 import '../../scss/main.scss';
-import './swiper.js'
+import './swiper.js';
+import './customSwiper.js';
 
 
 console.log('Hello, VetCat!');

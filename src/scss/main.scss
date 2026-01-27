@@ -1,3 +1,5 @@
+@use 'sass:map';
+@use './base/vars' as *;
 @use './reset.scss';
 @use './pages/main/index.scss';
 @use './mixins/respond-to.scss' as *;
@@ -24,6 +26,29 @@ body {
             transform: translateX(0);
         }
     }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    line-height: 117%;
+    color: map.get($colors, text1);
+}
+
+h2 {
+    font-size: 48px;
+
+    @include respond-to(tablet) {
+        font-size: 42px;
+    }
+}
+
+h3 {
+    font-size: 30px;
 }
 
 .container {
