@@ -1,0 +1,90 @@
+@use 'sass:map';
+@use '../../base/vars' as *;
+@use '../../mixins/respond-to.scss' as *;
+
+.blogs {
+    padding: 151px 0;
+
+    @include respond-to(mobile) {
+        padding: 90px 0;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 50px;
+        margin-bottom: 62px;
+        flex-wrap: wrap;
+    }
+
+    &__title {
+        width: 100%;
+        max-width: 730px;
+    }
+
+    &__wrapper {
+        display: flex;
+        gap: 40px;
+
+        @include respond-to(tablet) {
+            font-size: 15px;
+            flex-wrap: wrap;
+        }
+    }
+
+    &-large {
+        &__img-wrap {
+            margin-bottom: 20px;
+        }
+
+        &__title {
+            margin-bottom: 15px;
+
+            @include respond-to(tablet-l) {
+                font-size: 15px;
+            }
+
+            &:hover {
+                h3 {
+                    color: map.get($colors, primary);
+                    transition: color .3s ease;
+                }
+            }
+        }
+    }
+
+    &-mini {
+        width: 100%;
+        max-width: 344px;
+        display: flex;
+        flex-direction: column;
+        gap: 19px;
+
+        &__item {
+            padding-top: 15px;
+            border-top: 1px solid map.get($colors, borders);
+        }
+
+        &__title {
+            margin-bottom: 5px;
+
+            &:hover {
+                h6 {
+                    color: map.get($colors, primary);
+                    transition: color .3s ease;
+                }
+            }
+        }
+
+        &__date {
+            span {
+                display: block;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 143%;
+                color: map.get($colors, text3);
+            }
+        }
+    }
+}
