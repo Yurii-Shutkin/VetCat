@@ -2,6 +2,7 @@ import '../../scss/main.scss';
 import './swiper.js';
 import './customSwiper.js';
 import './teamSwiper.js';
+import './petSwiper.js';
 
 
 

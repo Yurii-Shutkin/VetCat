@@ -1,0 +1,19 @@
+include ../../partials/mixins/ui/swiper/_swiper.pug
+include ../../partials/mixins/ui/cards/_pet-card.pug
+
+.stories
+    .container-content
+        .stories__header
+            .stories__title
+                h2 Истории больших и маленьких пациентов, которым мы помогли
+            .main-servstories__buttons 
+                button.button.button--green
+                    a(href="#") Читать все истории
+    .stories-services__slider 
+        .container-content
+            +swiper('stories-swiper', 'stories-next', 'stories-prev')
+                each slide in petCardData 
+                    .swiper-slide 
+                        +pet-card(slide)
+    .stories-bg-cat 
+        img(src="./img/main/history-bg.png", alt="bg-cat")

@@ -1,0 +1,39 @@
+@use 'sass:map';
+@use '../../base/vars' as *;
+@use '../../mixins/respond-to.scss' as *;
+
+.stories {
+    position: relative;
+    padding: 130px 0 240px 0;
+    background: map.get($colors, bg3);
+
+    @include respond-to(mobile) {
+        padding: 80px 0 150px 0;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 65px;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    &__title {
+        width: 100%;
+        max-width: 785px;
+    }
+
+    .stories-next,
+    .stories-prev {
+        transform: translateY(-77%);
+    }
+
+    &-bg-cat {
+        position: absolute;
+        bottom: 0;
+        right: 50%;
+        transform: translateX(50%);
+    }
+}

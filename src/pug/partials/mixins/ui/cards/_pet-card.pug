@@ -1,0 +1,9 @@
+mixin pet-card (content = [])
+    .pet-card 
+        .pet-card__img-wrap 
+            img(src=content.photoUrl, alt="pet")
+        .pet-card__text 
+            .pet-card__title
+                a(href="#") 
+                    h5=content.title
+            span.pet-card__date=content.date

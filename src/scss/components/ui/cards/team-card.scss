@@ -11,7 +11,7 @@
             display: block;
         }
 
-        .team-card__about-block {
+        &:has(.team-card__name span) {
             color: map.get($colors, primary);
         }
     }
