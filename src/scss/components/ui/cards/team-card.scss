@@ -1,0 +1,81 @@
+@use 'sass:map';
+@use '../../../base/vars' as *;
+
+.team-card {
+    width: 100%;
+    max-width: 344px;
+    height: auto;
+
+    &:hover {
+        .team-card__photo-info-block {
+            display: block;
+        }
+
+        .team-card__about-block {
+            color: map.get($colors, primary);
+        }
+    }
+
+    &__photo-wrap {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 14px;
+    }
+
+    &__photo-info-block {
+        display: none;
+        position: relative;
+        box-shadow: inset 0 -2px 8px 0 rgba(11, 60, 54, 0.1);
+        background: linear-gradient(90deg, #e8fafa 0%, #dcf2e8 100%);
+        bottom: 71px;
+        border-radius: 8px;
+
+        div {
+            display: flex;
+            padding: 17px 0 23px 24px;
+
+            p {
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 114%;
+                color: map.get($colors, text1);
+                border-right: 1px solid map.get($colors, border);
+
+            }
+
+            span {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 114%;
+                color: map.get($colors, text1);
+                padding-left: 10px;
+            }
+
+            .text2 {
+                border-left: 1px solid map.get($colors, border);
+
+            }
+        }
+    }
+
+    &__about-block {
+        width: 100%;
+        max-width: 260px;
+    }
+
+    &__name {
+        text-wrap: wrap;
+        margin-bottom: 7px;
+    }
+
+    &__position {
+        display: block;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: map.get($colors, text2);
+        text-wrap: nowrap;
+    }
+
+}

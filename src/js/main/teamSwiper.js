@@ -4,19 +4,19 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-export function initSwiper() {
-  const el = document.querySelector('.main-page-swiper');
+export function initTeamSwiper() {
+  const el = document.querySelector('.team-swiper');
   if (!el) return; 
 
-  const servicesSwiper = new Swiper(el, {
+  const teamSwiper = new Swiper(el, {
     modules: [Navigation, Pagination],
     slidesPerView: 1,
     spaceBetween: 20,
     loop: true,
 
     navigation: {
-      nextEl: '.main-next',
-      prevEl: '.main-prev',
+      nextEl: '.team-next',
+      prevEl: '.team-prev',
     },
 
     breakpoints: {
@@ -43,8 +43,8 @@ export function initSwiper() {
     }
   });
 
-  document.querySelector('.main-prev').addEventListener('click', () => servicesSwiper.slidePrev());
-  document.querySelector('.main-next').addEventListener('click', () => servicesSwiper.slideNext());
+  document.querySelector('.team-prev').addEventListener('click', () => teamSwiper.slidePrev());
+  document.querySelector('.team-next').addEventListener('click', () => teamSwiper.slideNext());
 }
 
-document.addEventListener('DOMContentLoaded', initSwiper);
+document.addEventListener('DOMContentLoaded', initTeamSwiper);

@@ -1,0 +1,15 @@
+mixin team-card(content = [])
+    .team-card
+        .team-card__photo-wrap 
+            a(href="#") 
+                img(src=content.photoUrl, alt="teammate")
+                .team-card__photo-info-block 
+                    div 
+                        p Ближайшие приемы
+                        span.text1=content.data1
+                        span.text2=content.data2
+        .team-card__about-block 
+            .team-card__name
+                h5=content.name 
+            .team-card__position 
+                span=content.position

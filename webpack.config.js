@@ -11,7 +11,9 @@ const pages = fs
   .filter(dirent => dirent.isDirectory())
   .map(dirent => dirent.name);
 
-const textCardData = require('./src/pug/partials/data/cards/textCardData')
+const textCardData = require('./src/pug/partials/data/cards/textCardData');
+const teamCardData = require('./src/pug/partials/data/cards/teamCardData');
+
 
 module.exports = {
   mode: 'development',
@@ -42,6 +44,7 @@ module.exports = {
         template: path.resolve(PAGES_DIR, page, 'index.pug'),
         templateParameters: {
           textCardData: textCardData,
+          teamCardData: teamCardData,
         },
         filename: page === 'main' ? 'index.html' : `${page}/index.html`,
         chunks: [page],

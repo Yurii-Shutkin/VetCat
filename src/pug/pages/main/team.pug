@@ -1,0 +1,17 @@
+include ../../partials/mixins/ui/swiper/_swiper.pug
+include ../../partials/mixins/ui/cards/_team-card.pug
+
+.team
+    .container-content
+        .team__header
+            .team__title
+                h2 Наши специалисты отвечают на любые вопросы
+            .main-services__buttons 
+                button.button.button--green
+                    a(href="#") График работы врачей
+    .team-services__slider 
+        .container-content
+            +swiper('team-swiper', 'team-next', 'team-prev')
+                each slide in teamCardData
+                    .swiper-slide
+                        +team-card(slide)

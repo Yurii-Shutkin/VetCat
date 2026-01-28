@@ -13,7 +13,7 @@ include ../../partials/mixins/ui/cards/_text-card.pug
                     a(href="#") Смотреть все услуги
     .main-services__slider 
         .container-content
-            +swiper('main-page-swiper')
+            +swiper('main-page-swiper', 'main-next', 'main-prev')
                 each slide in textCardData
                     .swiper-slide
                         +text-card(slide)

@@ -5,6 +5,7 @@
 @use './mixins/respond-to.scss' as *;
 @use './components/ui/button/button.scss';
 @use './components/ui/cards/text-card.scss';
+@use './components/ui/cards/team-card.scss';
 @use './components/ui/swiper/swiper.scss';
 
 body {
@@ -49,6 +50,11 @@ h2 {
 
 h3 {
     font-size: 30px;
+}
+
+h5 {
+    font-size: 20px;
+    line-height: 120%;
 }
 
 .container {

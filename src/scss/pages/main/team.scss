@@ -1,0 +1,26 @@
+@use '../../mixins/respond-to.scss' as *;
+
+.team {
+    padding: 184px 0;
+
+    @include respond-to(laptop-l) {
+        padding: 40px 0;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    &__title {
+        width: 100%;
+        max-width: 701px;
+    }
+
+    &-services__slider {
+        margin-top: 64px;
+    }
+}
