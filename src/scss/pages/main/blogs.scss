@@ -3,7 +3,7 @@
 @use '../../mixins/respond-to.scss' as *;
 
 .blogs {
-    padding: 151px 0;
+    padding: 151px 0 165px 0;
 
     @include respond-to(mobile) {
         padding: 90px 0;
