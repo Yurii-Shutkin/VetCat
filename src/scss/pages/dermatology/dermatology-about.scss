@@ -1,0 +1,74 @@
+@use 'sass:map';
+@use '../../base/vars' as *;
+@use '../../mixins/respond-to.scss' as *;
+
+.dermatology-about {
+    &__hero {
+        display: flex;
+        gap: 42px;
+        margin-bottom: 36px;
+
+        @media(max-width: 1600px) {
+            flex-wrap: wrap;
+        }
+
+        .hero {
+            &__buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 13px;
+
+                @media(max-width: 1600px) {
+                    flex-direction: row;
+                }
+
+                @include respond-to(tablet) {
+                    flex-direction: column;
+                }
+
+                .button {
+                    width: 100%;
+                    max-width: 218px;
+                }
+            }
+        }
+    }
+
+    &__wrap {
+        width: 100%;
+        max-width: 824px;
+    }
+
+    &__intro {
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 138%;
+        color: map.get($colors, text1);
+        margin-bottom: 19px;
+    }
+
+    &__title {
+        margin-bottom: 21px;
+    }
+
+    &__primary-text {
+        margin-bottom: 20px;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 165%;
+        color: map.get($colors, text1);
+    }
+
+    &__list {
+        margin-bottom: 0;
+    }
+
+    &__paragraph {
+        margin-bottom: 44px;
+
+        ul {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+    }
+}

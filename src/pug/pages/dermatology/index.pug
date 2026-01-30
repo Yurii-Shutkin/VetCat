@@ -1,0 +1,24 @@
+extends ../../partials/components/main-layout/main-layout.pug
+
+block head
+    include ../../partials/mixins/_head.pug
+    +head('dermatology')
+
+block content
+    include ../../partials/components/svg-arrow/_svg-arrow.pug
+    .services__wrap 
+        include ../../partials/mixins/_hero.pug
+        +hero(hero.dermatology.title)
+            .breadcrumbs
+                a(href="/") Главная 
+                <svg class="icon">
+                    <use href="#icon-arrow"></use>
+                </svg>
+                a(href="/services") Наши услуги
+                <svg class="icon">
+                    <use href="#icon-arrow"></use>
+                </svg>
+                a.current-page(href="/dermatology") Дерматология
+        include ./dermatology-about.pug
+        include ../../partials/components/footer/footer.pug
+        
