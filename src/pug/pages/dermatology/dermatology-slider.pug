@@ -1,0 +1,18 @@
+.container-content
+    .dermatology-slider 
+        .dermatology-slider__header
+            .dermatology-slider__title 
+                h3 Записаться на прием к специалисту
+            include ../../partials/mixins/ui/_segment-buttons.pug
+            +segment-buttons()
+                button.segment-item.segment-item--active(data-tab='strogino')
+                    | Строгино
+                button.segment-item(data-tab='donskoy')
+                    | Донской
+        .dermatology-slider 
+            include ../../partials/mixins/ui/swiper/_swiper.pug
+            include ../../partials/mixins/ui/cards/_team-card.pug
+            +swiper('team-swiper', 'team-next', 'team-prev')
+                each slide in teamCardData
+                    .swiper-slide
+                        +team-card(slide)
