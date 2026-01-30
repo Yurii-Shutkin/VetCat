@@ -58,10 +58,11 @@
             display: flex;
             justify-content: space-between;
             gap: 60px;
-            padding-bottom: 10px;
 
             @include respond-to(mobile) {
                 border-bottom: 1px solid map.get($colors, border);
+                padding-bottom: 10px;
+
             }
         }
 
