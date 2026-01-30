@@ -1,0 +1,20 @@
+extends ../../partials/components/main-layout/main-layout.pug
+
+block head
+    include ../../partials/mixins/_head.pug
+    +head('price')
+
+block content
+    include ../../partials/components/svg-arrow/_svg-arrow.pug
+    .price
+        .price__hero
+            include ../../partials/mixins/_hero.pug
+            +hero(hero.price.title)
+                .breadcrumbs
+                    a(href="/") Главная 
+                    <svg class="icon">
+                        <use href="#icon-arrow"></use>
+                    </svg>
+                    a.current-page(href="/price") Стоимость
+            include ./price-tabs.pug
+            include ../../partials/components/footer/footer.pug

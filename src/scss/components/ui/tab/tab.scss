@@ -1,0 +1,44 @@
+@use 'sass:map';
+@use '../../../base/vars' as *;
+
+.tab {
+    max-width: fit-content;
+    cursor: pointer;
+
+    &__category {
+        background: map.get($colors, bg3);
+        padding: 7px 12px 9px 12px;
+        border-radius: 4px;
+
+        &:hover {
+            background: map.get($colors, primary);
+
+            span {
+                font-weight: 700;
+                color: map.get($colors, white1);
+            }
+        }
+
+        span {
+            display: block;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            color: map.get($colors, text1);
+            text-wrap: nowrap;
+        }
+
+        &--active {
+            background: map.get($colors, primary);
+
+            span {
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 150%;
+                text-align: center;
+                color: map.get($colors, white1);
+
+            }
+        }
+    }
+}

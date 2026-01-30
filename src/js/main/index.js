@@ -5,10 +5,6 @@ import './teamSwiper.js';
 import './petSwiper.js';
 import './map.js';
 
-
-
-console.log('Hello, VetCat!');
-
 const checkbox = document.querySelectorAll('.sidebar__checkbox');
 
 console.log(checkbox);

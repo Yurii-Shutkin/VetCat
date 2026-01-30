@@ -5,4 +5,7 @@ module.exports = {
   dermatology: {
     title: 'Дерматология',
   },
+  price: {
+    title: 'Стоимость услуг клиники',
+  },
 };
