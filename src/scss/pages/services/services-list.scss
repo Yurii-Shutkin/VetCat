@@ -1,0 +1,43 @@
+@use 'sass:map';
+@use '../../base/vars' as *;
+@use '../../mixins/respond-to.scss' as *;
+
+.services-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 24px;
+    column-gap: 40px;
+    margin-bottom: 148px;
+
+    @include respond-to(laptop-m) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include respond-to(tablet) {
+        grid-template-columns: 1fr;
+    }
+
+    @include respond-to(tablet) {
+        margin-bottom: 50px;
+    }
+
+    &__title {
+        margin-bottom: 29px;
+    }
+
+    &__item {
+        width: 100%;
+        max-width: 190px;
+
+        a {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 120%;
+            color: map.get($colors, text1);
+
+            &:hover {
+                color: map.get($colors, primary);
+            }
+        }
+    }
+}
