@@ -3,6 +3,7 @@ import './swiper.js';
 import './customSwiper.js';
 import './teamSwiper.js';
 import './petSwiper.js';
+import './map.js';
 
 
 
