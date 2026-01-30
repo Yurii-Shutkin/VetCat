@@ -1,0 +1,72 @@
+@use 'sass:map';
+@use '../../base/vars' as *;
+
+.tablinks {
+    display: flex;
+    justify-content: space-between;
+    background: map.get($colors, primary);
+    border-radius: 8px;
+    margin-bottom: 59px;
+
+    @media(max-width: 1650px) {
+        background: none;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
+    &__item {
+        padding: 28px 0 36px 0;
+        width: 100%;
+        max-width: 255px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-right: 1px solid map.get($colors, dark-primary);
+
+        &:last-child {
+            border: none;
+        }
+
+        &:hover {
+            background: #2bd9bc;
+            border-radius: 8px;
+        }
+
+        @media(max-width: 1650px) {
+            padding: 15px 0;
+            border: none;
+            background: map.get($colors, primary);
+            margin: 0 auto;
+            border-radius: 8px;
+        }
+
+        .item {
+            &__icon {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 64px;
+                height: 64px;
+
+                @media(max-width: 1650px) {
+                    display: none;
+                }
+            }
+
+            &__title {
+                cursor: pointer;
+
+                a {
+                    color: map.get($colors, white1);
+                    font-weight: 700;
+                    font-size: 20px;
+                    line-height: 120%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
