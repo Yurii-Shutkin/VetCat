@@ -20,5 +20,11 @@ block content
                 </svg>
                 a.current-page(href="/dermatology") Дерматология
         include ./dermatology-about.pug
+        include ../../partials/mixins/ui/_segment-buttons.pug
+        +segment-buttons
+            button.segment-item.segment-item--active(data-tab='strogino')
+                | Строгино
+            button.segment-item(data-tab='donskoy')
+                | Донской
         include ../../partials/components/footer/footer.pug
         
