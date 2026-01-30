@@ -1,4 +1,4 @@
-import '../../scss/main.scss';
+import '../../scss/pages/main/index.scss';
 import './swiper.js';
 import './customSwiper.js';
 import './teamSwiper.js';

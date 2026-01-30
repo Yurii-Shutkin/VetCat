@@ -1,0 +1,21 @@
+extends ../../partials/components/main-layout/main-layout.pug
+
+block head
+    include ../../partials/mixins/_head.pug
+    +head('services')
+
+block content
+    include ../../partials/components/svg-arrow/_svg-arrow.pug
+    .services__wrap 
+        include ../../partials/mixins/_hero.pug
+        +hero(hero.services.title)
+            .breadcrumbs
+                a(href="/") Главная 
+                <svg class="icon">
+                    <use href="#icon-arrow"></use>
+                </svg>
+                a.current-page(href="/services") Наши услуги 
+
+        include ../../partials/components/footer/footer.pug
+        
+

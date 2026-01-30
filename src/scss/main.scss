@@ -1,8 +1,12 @@
 @use 'sass:map';
-@use './base/vars' as *;
 @use './reset.scss';
-@use './pages/main/index.scss';
+@use './base/vars' as *;
 @use './mixins/respond-to.scss' as *;
+@use './components/header/header.scss';
+@use './components/sidebar/sidebar.scss';
+@use './components/burger/burger.scss';
+@use './components/breadcrumbs/breadcrumbs.scss';
+@use './components/hero/hero.scss';
 @use './components/ui/button/button.scss';
 @use './components/ui/cards/text-card.scss';
 @use './components/ui/cards/team-card.scss';
