@@ -14,6 +14,7 @@ const pages = fs
 const textCardData = require('./src/pug/partials/data/cards/textCardData');
 const teamCardData = require('./src/pug/partials/data/cards/teamCardData');
 const petCardData = require('./src/pug/partials/data/cards/petCardData');
+const priceCardData = require('./src/pug/partials/data/cards/priceCardData');
 const hero = require('./src/pug/partials/data/hero');
 
 
@@ -51,6 +52,7 @@ module.exports = {
           teamCardData: teamCardData,
           petCardData: petCardData,
           hero: hero,
+          priceCardData: priceCardData,
         },
         filename: page === 'main' ? 'index.html' : `${page}/index.html`,
         chunks: [page],
