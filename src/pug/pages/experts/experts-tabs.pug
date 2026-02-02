@@ -1,0 +1,24 @@
+include ../../partials/mixins/ui/_tab.pug
+include ../../partials/mixins/ui/_segment-buttons.pug
+include ../../partials/mixins/ui/cards/_team-card.pug
+
+.container-content
+    .experts-tabs
+        .price-tabs
+            .price-tabs__head
+                .price-tabs__desc 
+                    p У нас работают более 20 ветеринарных врачей, среди которых 3 кандидата наук.
+                .experts-segments 
+                    +segment-buttons()
+                        button.segment-item.segment-item--active(data-tab='vezde')
+                            | Везде
+                        button.segment-item(data-tab='strogino')
+                            | Строгино
+                        button.segment-item(data-tab='donskoy')
+                            | Донской
+            .price-tabs__wrap
+                each item in tab.experts.categories
+                    +tab(item.category)
+    .experts-team 
+        each item in teamCardData
+            +team-card(item)

@@ -4,5 +4,5 @@ include ../../partials/mixins/ui/_tab.pug
         .price-tabs__desc 
             p Для удобства все собрали цены на все услуги в одном месте. Выберите специализацию и воспользуйтесь поиском.
         .price-tabs__wrap
-            each item in tab.price
+            each item in tab.price.categories
                 +tab(item.category)

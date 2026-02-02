@@ -8,4 +8,7 @@ module.exports = {
   price: {
     title: 'Стоимость услуг клиники',
   },
+  experts: {
+    title: 'Наши специалисты',
+  },
 };

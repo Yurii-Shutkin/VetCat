@@ -1,0 +1,19 @@
+extends ../../partials/components/main-layout/main-layout.pug
+
+block head
+    include ../../partials/mixins/_head.pug
+    +head('experts')
+
+block content
+    include ../../partials/components/svg-arrow/_svg-arrow.pug
+    .services__wrap 
+        include ../../partials/mixins/_hero.pug
+        +hero(hero.experts.title)
+            .breadcrumbs
+                a(href="/") Главная 
+                <svg class="icon">
+                    <use href="#icon-arrow"></use>
+                </svg>
+                a.current-page(href="/experts") Сотрудники
+        include ./experts-tabs.pug
+        include ../../partials/components/footer/footer.pug

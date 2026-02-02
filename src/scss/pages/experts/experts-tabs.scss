@@ -1,0 +1,42 @@
+@use '../../mixins/respond-to.scss' as *;
+
+.experts-tabs {
+    .price-tabs {
+        &__head {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+
+            @media(max-width: 1760px) {
+                margin-bottom: 40px;
+            }
+        }
+
+        &__desc {
+            width: 600px;
+        }
+    }
+
+    .segment-buttons {
+        position: relative;
+        bottom: 5px;
+    }
+}
+
+.experts-team {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 40px;
+    row-gap: 74px;
+    margin-top: 75px;
+    margin-bottom: 130px;
+
+    @media(max-width: 1760px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include respond-to(tablet-l) {
+        grid-template-columns: 1fr;
+    }
+}
