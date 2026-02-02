@@ -24,6 +24,17 @@
         margin-bottom: 7px;
     }
 
+    &__sub-item {
+        margin-bottom: 21px;
+    }
+
+    &__subtitle {
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 141%;
+        color: map.get($colors, text1);
+    }
+
     &__desc {
         font-weight: 400;
         font-size: 14px;
@@ -48,7 +59,7 @@
 
     &__service {
         width: 100%;
-        max-width: 344px;
+        max-width: 374px;
 
         @include respond-to(mobile) {
             max-width: 100px;
@@ -57,7 +68,7 @@
         &-item {
             display: flex;
             justify-content: space-between;
-            gap: 60px;
+            gap: 30px;
 
             @include respond-to(mobile) {
                 border-bottom: 1px solid map.get($colors, border);

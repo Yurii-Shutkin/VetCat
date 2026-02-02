@@ -1,0 +1,43 @@
+.price-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    grid-template-areas:
+        'vaccination dermatology'
+        'vaccination therapy'
+    ;
+    grid-template-rows: auto 1fr;
+    margin-bottom: 105px;
+
+    @media(max-width: 1650px) {
+        grid-template-columns: 1fr;
+        grid-template-areas: unset;
+        grid-template-rows: unset;
+    }
+
+    &-wrap {
+        &--vaccination {
+            grid-area: vaccination;
+
+            @media(max-width: 1650px) {
+                grid-area: unset;
+            }
+        }
+
+        &--dermatology {
+            grid-area: dermatology;
+
+            @media(max-width: 1650px) {
+                grid-area: unset;
+            }
+        }
+
+        &--therapy {
+            grid-area: therapy;
+
+            @media(max-width: 1650px) {
+                grid-area: unset;
+            }
+        }
+    }
+}

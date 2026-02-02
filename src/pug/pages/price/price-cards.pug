@@ -1,0 +1,10 @@
+include ../../partials/mixins/ui/cards/_price-card.pug
+
+.container-content
+        .price-cards 
+            .price-cards-wrap.price-cards-wrap--vaccination
+                +price-card(priceCardData.vaccination)
+            .price-cards-wrap.price-cards-wrap--dermatology  
+                +price-card(priceCardData.dermatology)
+            .price-cards-wrap.price-cards-wrap--therapy   
+                +price-card(priceCardData.therapy)

@@ -4,11 +4,23 @@ mixin price-card(content)
             .price-card__title 
                 h3=content.title
             .price-card__desc Цены указаны в российских рублях за одну процедуру/сеанс для одного животного
-        .price-card__services
-            each service in content.services 
-                .price-card__service-item
-                    .price-card__service
-                        span=service.title 
-                    .price-card__service-price 
-                        span=service.price
-        
+        if content.sub
+            each item in content.sub  
+                .price-card__sub-item
+                    .price-card__services
+                        .price-card__subtitle
+                            p=item.title
+                        each service in item.services 
+                            .price-card__service-item
+                                .price-card__service
+                                    span=service.title 
+                                .price-card__service-price 
+                                    span=service.price
+        else 
+            .price-card__services
+                each service in content.services 
+                    .price-card__service-item
+                        .price-card__service
+                            span=service.title 
+                        .price-card__service-price 
+                            span=service.price
