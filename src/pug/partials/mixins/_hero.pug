@@ -1,7 +1,8 @@
-mixin hero(content)
-    .container-content
-        .hero 
+mixin hero(content, mode)
+    div(class=`hero ${mode}`) 
+        .container-content
             .hero__breadcrumbs
                 block
             .hero__title 
                 h2=content
+

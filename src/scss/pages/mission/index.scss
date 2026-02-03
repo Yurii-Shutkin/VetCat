@@ -1,0 +1,13 @@
+@use '../../main.scss';
+@use './about.scss';
+
+.mission {
+
+    &__segments {
+        background: linear-gradient(90deg, #e8fafa 0%, #dcf2e8 100%);
+
+        .advisable__segments {
+            padding: 1px 0px 22px 4px
+        }
+    }
+}

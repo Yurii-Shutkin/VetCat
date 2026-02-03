@@ -1,3 +1,7 @@
 .hero {
     padding: 58px 0 46px 0;
+
+    &--bgc {
+        background: linear-gradient(90deg, #e8fafa 0%, #dcf2e8 100%);
+    }
 }

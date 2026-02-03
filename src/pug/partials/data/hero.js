@@ -17,4 +17,7 @@ module.exports = {
   advisable: {
     title: 'Информативно и полезно',
   },
+  vetCatLayout: {
+    title: 'Ветеренарный центр «ВетКэт»',
+  },
 };

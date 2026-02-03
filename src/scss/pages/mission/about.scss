@@ -1,0 +1,71 @@
+@use 'sass:map';
+@use '../../base/vars' as *;
+@use '../../mixins/respond-to.scss' as *;
+
+.about {
+    &-wrap {
+        padding-top: 68px;
+        padding-bottom: 164px;
+        background: map.get($colors, bg2);
+    }
+
+    width: 100%;
+    max-width: 824px;
+
+    p {
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 165%;
+        color: map.get($colors, text1);
+    }
+
+    &__promo {
+        margin-bottom: 20px;
+
+        p {
+            font-weight: 400;
+            font-size: 26px;
+            line-height: 138%;
+            color: map.get($colors, text1);
+        }
+    }
+
+    &__desc {
+        margin-bottom: 52px;
+    }
+
+    &__banner {
+        margin-bottom: 52px;
+    }
+
+    &__why {
+        margin-bottom: 40px;
+
+        h3 {
+            margin-bottom: 22px;
+        }
+
+        p {
+            margin-bottom: 20px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__slider {
+
+        h3 {
+            margin-bottom: 41px;
+        }
+    }
+}
+
+.image-placeholder {
+    border-radius: 8px;
+    width: 266px;
+    height: 376px;
+    box-shadow: 0 4px 20px 0 rgba(26, 57, 63, 0.1);
+    background: map.get($colors, white1);
+}

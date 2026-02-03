@@ -10,6 +10,7 @@
         background: var(--belyy2);
         border-radius: 20px;
         max-width: fit-content;
+        background: map.get($colors, white2);
         padding: 4px;
         transition:
             transform .35s cubic-bezier(.4, 0, .2, 1),
@@ -18,11 +19,18 @@
 
     &-item {
         padding: 9px 20px 12px 19px;
-        background: transparent;
         color: map.get($colors, text3);
         white-space: nowrap;
         transition: color .25s ease;
         font-weight: 700;
+
+        &:first-child {
+            border-radius: 16px 0 0 16px;
+        }
+
+        &:last-child {
+            border-radius: 0 16px 16px 0;
+        }
 
         &--lite {
             padding: 9px 9px 12px 10px;
@@ -32,6 +40,14 @@
             background: map.get($colors, primary);
             color: map.get($colors, white1);
             border-radius: 16px;
+
+            &:first-child {
+                border-radius: 16px;
+            }
+
+            &:last-child {
+                border-radius: 16px;
+            }
         }
     }
 }
