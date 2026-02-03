@@ -1,0 +1,11 @@
+@use '../../main.scss' as *;
+@use './reviews.scss';
+
+.reviews {
+    &__wrap {
+        .mission__segments {
+            background: linear-gradient(90deg, #e8fafa 0%, #dcf2e8 100%);
+            padding-bottom: 24px;
+        }
+    }
+}

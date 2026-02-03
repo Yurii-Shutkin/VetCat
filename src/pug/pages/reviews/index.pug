@@ -1,0 +1,31 @@
+extends ../../partials/components/main-layout/main-layout.pug
+include ../../partials/mixins/ui/_segment-buttons.pug
+
+block head
+    include ../../partials/mixins/_head.pug
+    +head('reviews')
+
+block content
+    include ../../partials/components/svg-arrow/_svg-arrow.pug
+    .reviews__wrap
+        include ../../partials/mixins/_hero.pug
+        +hero(hero.vetCatLayout.title, 'hero--bgc')
+            .breadcrumbs
+                a(href="/") Главная 
+                <svg class="icon">
+                    <use href="#icon-arrow"></use>
+                </svg>
+                a.current-page(href="/reviews") Отзывы
+        .mission__segments
+            .advisable__segments 
+                .container-content
+                    +segment-buttons()
+                        a.segment-item(href="/mission" data-tab='mission')
+                            | Наша миссия
+                        a.segment-item(href="/gallery" data-tab='gallery')
+                            | Фотогалерея
+                        a.segment-item.segment-item--active(href="/reviews" data-tab='reviews')
+                            | Отзывы
+    include ./reviews.pug
+    include ../../partials/components/footer/footer.pug
+
