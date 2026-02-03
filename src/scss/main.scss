@@ -95,3 +95,21 @@ h6 {
         }
     }
 }
+
+.tel-link {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 117%;
+    color: map.get($colors, text1);
+
+    @include respond-to(mobile) {
+        font-size: 26px;
+    }
+}
+
+.mail-link {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 120%;
+    color: map.get($colors, text1);
+}

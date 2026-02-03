@@ -24,6 +24,10 @@
         transition: color .25s ease;
         font-weight: 700;
 
+        &--lite {
+            padding: 9px 9px 12px 10px;
+        }
+
         &--active {
             background: map.get($colors, primary);
             color: map.get($colors, white1);

@@ -107,7 +107,7 @@ module.exports = {
     watchFiles: [
       'src/pug/**/*',   
       'src/js/**/*',    
-      'src/scss/**/*'  
+      'src/scss/**/*' 
     ],
   },
 

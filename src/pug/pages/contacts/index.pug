@@ -1,0 +1,48 @@
+extends ../../partials/components/main-layout/main-layout.pug
+include ../../partials/mixins/ui/_segment-buttons.pug
+
+block head
+    include ../../partials/mixins/_head.pug
+    +head('contacts')
+
+block content
+    include ../../partials/components/svg-arrow/_svg-arrow.pug
+    .contacts__wrap 
+        include ../../partials/mixins/_hero.pug
+        +hero(hero.contacts.title)
+            .breadcrumbs
+                a(href="/") Главная 
+                <svg class="icon">
+                    <use href="#icon-arrow"></use>
+                </svg>
+                a.current-page(href="/contacts") Контакты
+    .container-content
+        .contacts__info-block
+            .contacts__info 
+                .info__tel 
+                    a.tel-link(href="tel:+380971102303") +38 (097) 110-23-03
+                    span Единый круглосуточный номер
+                .info__mail 
+                    a.mail-link(href="mailto: vetket@ukr.net")  vetket@ukr.net
+                .info__segments
+                    +segment-buttons()
+                        button.segment-item--lite.segment-item--active(data-tab='primorskii')
+                            | Приморский
+                        button.segment-item--lite(data-tab='suvorovskii')
+                            | суворовский
+                .info__adress 
+                    .info__adress-title 
+                        h5 Клиника «ВетКэт» в Приморском
+                    .info__adress-info 
+                        span Одесса, Чкалова, 57 корпус 5
+                        span Круглосуточно, без выходных
+                    .info__location-link 
+                        a(href="#") Как добраться? 
+                        <svg class="icon">
+                            <use href="#icon-arrow"></use>
+                        </svg>
+            .contacts__map
+                <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d159991.2306821675!2d30.40857054957182!3d50.421391926869276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z0LfQvtC70L7RgtGL0LUg0LLQvtGA0L7RgtCwINC60LjQtdCy!5e0!3m2!1sru!2sua!4v1770076523768!5m2!1sru!2sua" width="632" height="437" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        include ./contacts-cards.pug
+    include ../../partials/components/footer/footer.pug
+        
