@@ -12,7 +12,7 @@ include ../../partials/mixins/ui/cards/_pet-card.pug
     .stories-services__slider 
         .container-content
             +swiper('stories-swiper', 'stories-next', 'stories-prev')
-                each slide in petCardData 
+                each slide in petCardData.slider 
                     .swiper-slide 
                         +pet-card(slide)
     .stories-bg-cat 

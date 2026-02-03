@@ -1,0 +1,8 @@
+@use '../../main.scss';
+@use './stories.scss';
+
+.advisable__wrap {
+    background: linear-gradient(90deg, #e8fafa 0%, #dcf2e8 100%);
+    padding-bottom: 24px;
+    margin-bottom: 64px;
+}

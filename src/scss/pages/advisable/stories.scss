@@ -1,0 +1,67 @@
+@use '../../mixins/respond-to.scss' as *;
+
+.advissable-grid-wrap {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 40px;
+    row-gap: 72px;
+    margin-bottom: 185px;
+
+    @media(max-width: 1850px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include respond-to(laptop-m) {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 15px;
+
+    }
+
+    @include respond-to(tablet) {
+        grid-template-columns: 1fr;
+    }
+
+    @include respond-to(mobile) {
+        margin-bottom: 90px;
+    }
+
+    .pet-card {
+        max-width: 344px;
+        grid-column: span 4;
+        margin: 0;
+
+        @media(max-width: 1850px) {
+            max-width: 248px;
+            grid-column: unset;
+        }
+
+        @include respond-to(tablet) {
+            margin: 0 auto;
+        }
+
+        &__img-wrap {
+            width: 344px;
+            height: auto;
+
+            @media(max-width: 1850px) {
+                max-width: 248px;
+            }
+        }
+
+        &:nth-child(n + 4):nth-child(-n + 7) {
+            grid-column: span 3;
+
+            @media(max-width: 1850px) {
+                grid-column: unset;
+            }
+        }
+
+        &:nth-child(n + 11):nth-child(-n + 14) {
+            grid-column: span 3;
+
+            @media(max-width: 1850px) {
+                grid-column: unset;
+            }
+        }
+    }
+}

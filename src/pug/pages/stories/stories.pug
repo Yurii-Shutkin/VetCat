@@ -1,0 +1,6 @@
+include ../../partials/mixins/ui/cards/_pet-card.pug
+
+.container-content
+    .advissable-grid-wrap 
+        each story in petCardData.stories
+            +pet-card(story)

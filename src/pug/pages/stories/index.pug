@@ -1,0 +1,29 @@
+extends ../../partials/components/main-layout/main-layout.pug
+include ../../partials/mixins/ui/_segment-buttons.pug
+
+
+block head
+    include ../../partials/mixins/_head.pug
+    +head('stories')
+
+block content
+    include ../../partials/components/svg-arrow/_svg-arrow.pug
+    .advisable__wrap 
+        include ../../partials/mixins/_hero.pug
+        +hero(hero.advisable.title)
+            .breadcrumbs
+                a(href="/") Главная 
+                <svg class="icon">
+                    <use href="#icon-arrow"></use>
+                </svg>
+                a.current-page(href="/stories") Истории пациентов
+        .advisable__segments 
+            .container-content
+                +segment-buttons()
+                    button.segment-item.segment-item--active(data-tab='stories')
+                        | Истории пациентов
+                    button.segment-item(data-tab='posts')
+                        | Статьи
+    include ./stories.pug
+    include ../../partials/components/footer/footer.pug
+    
