@@ -3,11 +3,11 @@ include ../../partials/mixins/ui/_segment-buttons.pug
 
 block head
     include ../../partials/mixins/_head.pug
-    +head('mission')
+    +head('gallery')
 
 block content
     include ../../partials/components/svg-arrow/_svg-arrow.pug
-    .mission__wrap 
+    .gallery
         include ../../partials/mixins/_hero.pug
         +hero(hero.vetCatLayout.title, 'hero--bgc')
             .breadcrumbs
@@ -15,16 +15,16 @@ block content
                 <svg class="icon">
                     <use href="#icon-arrow"></use>
                 </svg>
-                a.current-page(href="/mission") Наша миссия
+                a.current-page(href="/gallery") Фотогалерея
         .mission__segments
             .advisable__segments 
                 .container-content
                     +segment-buttons()
-                        a.segment-item.segment-item--active(href="/mission" data-tab='mission')
+                        a.segment-item(href="/mission" data-tab='mission')
                             | Наша миссия
-                        a.segment-item(href="/gallery" data-tab='gallery')
+                        a.segment-item.segment-item--active(href="/gallery" data-tab='gallery')
                             | Фотогалерея
                         a.segment-item(href="/reviews" data-tab='reviews')
                             | Отзывы
-        include ./about.pug
+        include ./gallery-wrap.pug
         include ../../partials/components/footer/footer.pug

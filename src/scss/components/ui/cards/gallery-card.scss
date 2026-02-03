@@ -1,0 +1,90 @@
+@use 'sass:map';
+@use '../../../base/vars' as *;
+@use '../../../mixins/respond-to' as *;
+
+.gallery-card {
+    display: flex;
+    width: 100%;
+    max-width: 536px;
+
+    @include respond-to(mobile) {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &:hover {
+        .gallery-card__link {
+            opacity: 1;
+            transition: opacity .3s aese;
+
+            @include respond-to(mobile) {
+                display: none;
+            }
+        }
+
+        &:has(.gallery-card__title) {
+            h5 {
+                color: map.get($colors, primary);
+                transition: color .3s aese;
+            }
+        }
+    }
+
+    &__img-wrap {
+        width: 100%;
+        max-width: 264px;
+        min-width: 100px;
+    }
+
+    &__text {
+        width: 100%;
+        max-width: 272px;
+        padding: 28px 25px 25px 24px;
+        box-shadow: 0 4px 20px 0 rgba(26, 57, 63, 0.1);
+        background: map.get($colors, white1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include respond-to(mobile) {
+            max-width: 264px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 10px;
+    }
+
+    &__location {
+        display: flex;
+
+        svg {
+            margin-right: 4px;
+        }
+    }
+
+    &__link {
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 171%;
+        text-align: right;
+        color: map.get($colors, primary);
+        margin-left: auto;
+        opacity: 0;
+        transition: opacity .3s aese;
+
+        button {
+            display: block;
+        }
+
+        .icon {
+            cursor: pointer;
+            width: 20px;
+            height: 8px;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+@use 'sass:map';
+@use '../../base/vars' as *;
+
+.gallery-content {
+    background: map.get($colors, bg2);
+}
+
+.gallery-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding-top: 64px;
+    padding-bottom: 132px;
+
+    @media(max-width: 1600px) {
+        grid-template-columns: 1fr;
+    }
+}

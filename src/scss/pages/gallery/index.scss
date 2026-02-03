@@ -1,0 +1,9 @@
+@use '../../main.scss';
+@use './gallery-wrap.scss';
+
+.gallery {
+    .mission__segments {
+        background: linear-gradient(90deg, #e8fafa 0%, #dcf2e8 100%);
+        padding-bottom: 24px;
+    }
+}

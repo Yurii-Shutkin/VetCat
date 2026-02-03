@@ -1,0 +1,8 @@
+include ../../partials/mixins/ui/cards/_gallery-card.pug
+
+
+.gallery-content
+    .container-content 
+        .gallery-wrap
+            each card in galleryCardData 
+                +gallery-card(card)
