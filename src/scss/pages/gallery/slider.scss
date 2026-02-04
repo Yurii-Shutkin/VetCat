@@ -1,0 +1,280 @@
+@use 'sass:map';
+@use '../../base/vars' as *;
+
+.modal-slider {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10001;
+}
+
+.modal-slider-header {
+    pointer-events: none;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.modal-slider-title {
+    max-width: fit-content;
+    margin: 0 auto 10px;
+
+    h5 {
+        color: map.get($colors, white1);
+    }
+}
+
+.modal-slider-location {
+    max-width: fit-content;
+    display: flex;
+    margin: 0 auto;
+
+    span {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 143%;
+        color: map.get($colors, text3);
+    }
+}
+
+.modal-slider-wrap {
+    position: relative;
+    width: fit-content;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media(max-width: 800px) {
+        height: 60vh;
+    }
+
+    @media(max-width: 600px) {
+        height: 40vh;
+    }
+
+    @media(max-width: 425px) {
+        height: 30vh;
+    }
+}
+
+.modal-slider-close {
+    position: absolute;
+    content: '';
+    display: block;
+    top: 50px;
+    right: 83px;
+    z-index: 99999999;
+
+    @media(max-width: 650px) {
+        right: 20px;
+    }
+
+    div {
+        position: relative;
+        width: 20px;
+        height: 2px;
+        background: map.get($colors, white1);
+        transform: rotate(45deg);
+        z-index: 99999999;
+
+        &::after {
+            position: absolute;
+            content: '';
+            display: block;
+            width: inherit;
+            height: inherit;
+            background: inherit;
+            transform: rotate(-90deg);
+        }
+    }
+
+}
+
+.modal-slider-overview {
+    position: fixed;
+    content: '';
+    display: none;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: map.get($colors, darken);
+    opacity: .9;
+    z-index: 10000;
+}
+
+.clinic-slider {
+    width: 100%;
+    max-width: 1092px;
+    margin: 0 auto;
+
+    @media(max-width:1200px) {
+        max-width: 800px;
+    }
+}
+
+.slider-wrap {
+    max-width: 100%;
+    position: relative;
+}
+
+.custom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: map.get($colors, primary);
+
+    @media(max-width: 900px) {
+        display: none;
+    }
+
+    &-next {
+        position: absolute;
+        right: -206px;
+        bottom: 50%;
+        transform: translateY(-50%);
+
+        @media(max-width:1550px) {
+            right: -50px;
+        }
+
+        @media(max-width:1440px) {
+            right: -20px;
+        }
+
+        @media(max-width: 900px) {
+            right: -60px;
+        }
+    }
+
+    &-prev {
+        position: absolute;
+        left: -206px;
+        bottom: 50%;
+        transform: translateY(-50%);
+
+        @media(max-width:1550px) {
+            left: -50px;
+        }
+
+        @media(max-width:1440px) {
+            left: -20px;
+        }
+
+        @media(max-width: 900px) {
+            left: -60px;
+        }
+    }
+
+    &:hover {
+        opacity: .9;
+    }
+
+    &.swiper-button-disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+    }
+}
+
+.main-swiper {
+    width: 100%;
+    max-width: 900px;
+    height: 596px;
+    margin-bottom: 72px;
+
+    @media(max-width:1550px) {
+        max-width: 800px;
+        height: auto;
+    }
+
+    @media(max-width:1200px) {
+        max-width: 600px;
+        height: auto;
+    }
+
+    @media(max-width: 800px) {
+        max-width: 500px;
+    }
+
+    @media(max-width: 650px) {
+        max-width: 400px;
+        margin-bottom: 30px;
+    }
+
+    @media(max-width: 425px) {
+        max-width: 300px;
+        margin-bottom: 15px;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.thumbs-swiper {
+    height: 64px;
+    box-sizing: border-box;
+    width: 100%;
+
+    @media(max-width: 900px) {
+        width: 700px;
+    }
+
+    @media(max-width: 800px) {
+        width: 600px;
+    }
+
+    @media(max-width: 650px) {
+        height: 25px;
+        width: 400px;
+    }
+
+    @media(max-width: 425px) {
+        height: 15px;
+        width: 300px;
+    }
+
+    .swiper-slide {
+        position: relative;
+        width: 96px;
+        height: 100%;
+        cursor: pointer;
+        transition: opacity 0.3s;
+
+        &::after {
+            position: absolute;
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100px;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: map.get($colors, darken);
+            opacity: .6;
+        }
+
+        &-thumb-active {
+            opacity: 1;
+            border: 3px solid map.get($colors, primary);
+
+            &::after {
+                opacity: 0;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

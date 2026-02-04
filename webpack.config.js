@@ -18,6 +18,8 @@ const priceCardData = require('./src/pug/partials/data/cards/priceCardData');
 const galleryCardData = require('./src/pug/partials/data/cards/galleryCardData');
 const hero = require('./src/pug/partials/data/hero');
 const tab = require('./src/pug/partials/data/tab');
+const sliderData = require('./src/pug/partials/data/sliderData');
+
 
 
 
@@ -58,6 +60,7 @@ module.exports = {
           priceCardData: priceCardData,
           galleryCardData: galleryCardData,
           tab: tab,
+          sliderData: sliderData,
         },
         filename: page === 'main' ? 'index.html' : `${page}/index.html`,
         chunks: [page],

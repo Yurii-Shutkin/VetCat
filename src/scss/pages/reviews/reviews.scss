@@ -27,7 +27,6 @@
     &__reviews {
         display: flex;
         flex-wrap: wrap;
-        // min-width: 344px;
         gap: 40px;
     }
 
@@ -82,7 +81,7 @@
                 display: -webkit-box;
                 -webkit-box-orient: vertical;
                 -webkit-line-clamp: 5;
-
+                line-clamp: 5;
                 overflow: hidden;
                 min-width: 0;
             }
@@ -91,7 +90,7 @@
         &__meta {
             display: flex;
             justify-content: space-between;
-            row-gap: 10px;
+            column-gap: 20px;
             flex-wrap: wrap;
         }
 
