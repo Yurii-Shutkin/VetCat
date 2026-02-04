@@ -1,0 +1,31 @@
+.review-modal 
+    .review-modal__close
+    .review-modal__wrap 
+        .review-modal__title
+            h2 Оставить отзыв
+        form.review-modal__form.form(action="#") 
+            .review-modal__select.form__select
+                label(for="doctor") Специалист
+                select(id='doctor', name="doctor")
+                    option(value='malitskaya', selected) Малицкая Валерия Викторовна
+                    option(value='yaroslavskaya') Савченко Екатерина Сергеевна
+                    option(value='savchenko') Ярославская Екатерина Ивановна
+            .review-modal__textarea.form__textarea
+                textarea(name="review")
+            .review-modal__inputs-block
+                .review-modal__input-text.form__text
+                    label(for="name") Ваше имя
+                    input(type="text", name="name", id="name")
+                .review-modal__input-text.form__text 
+                    label(for="mail") E-mail для ответа 
+                        span не публикуем на сайте
+                    input(type="email", name="mail", id="mail")
+            .review-modal__footer 
+                .review-modal__checkbox.form__checkbox 
+                    label(for="checkbox") 
+                        span Я согласен с 
+                        | условиями обработки персональных данных
+                    input(type="checkbox", name="checkbox", id="checkbox")
+                .review-modal__submit.form__submit 
+                    button.button.button--green(type="submit") Отправить
+.review-modal__overview

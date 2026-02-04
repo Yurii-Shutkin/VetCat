@@ -30,9 +30,28 @@
         grid-column: span 4;
         margin: 0;
 
+        &:nth-child(n + 4):nth-child(-n + 7) {
+            grid-column: span 3;
+        }
+
+        &:nth-child(n + 11):nth-child(-n + 14) {
+            grid-column: span 3;
+        }
+
         @media(max-width: 1850px) {
             max-width: 248px;
             grid-column: unset;
+            margin: 0 auto;
+
+            &:nth-child(n + 4):nth-child(-n + 7) {
+                grid-column: unset;
+                width: inherit;
+            }
+
+            &:nth-child(n + 11):nth-child(-n + 14) {
+                grid-column: unset;
+                width: inherit;
+            }
         }
 
         @include respond-to(tablet) {
@@ -45,22 +64,6 @@
 
             @media(max-width: 1850px) {
                 max-width: 248px;
-            }
-        }
-
-        &:nth-child(n + 4):nth-child(-n + 7) {
-            grid-column: span 3;
-
-            @media(max-width: 1850px) {
-                grid-column: unset;
-            }
-        }
-
-        &:nth-child(n + 11):nth-child(-n + 14) {
-            grid-column: span 3;
-
-            @media(max-width: 1850px) {
-                grid-column: unset;
             }
         }
     }

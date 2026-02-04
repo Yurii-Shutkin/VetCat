@@ -4,15 +4,26 @@
 .team-card {
     width: 100%;
     max-width: 344px;
-    height: auto;
+    height: 494px;
 
     &:hover {
+
+        img {
+            position: relative;
+            bottom: -71px;
+        }
+
         .team-card__photo-info-block {
             display: block;
         }
 
         &:has(.team-card__name span) {
             color: map.get($colors, primary);
+        }
+
+        &:has(.team-card__about-block) {
+            position: relative;
+            bottom: 71px;
         }
     }
 
@@ -28,7 +39,6 @@
         position: relative;
         box-shadow: inset 0 -2px 8px 0 rgba(11, 60, 54, 0.1);
         background: linear-gradient(90deg, #e8fafa 0%, #dcf2e8 100%);
-        bottom: 71px;
         border-radius: 8px;
 
         div {
