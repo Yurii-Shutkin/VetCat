@@ -1,0 +1,83 @@
+@use 'sass:map';
+@use '../../base/vars' as *;
+@use '../../mixins/respond-to.scss' as *;
+
+.reviews__modal {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1112px;
+    background: map.get($colors, white1);
+    z-index: 10001;
+    overflow-y: auto;
+    max-height: 100vh;
+
+
+    &-wrap {
+        padding: 88px 144px;
+        position: relative;
+
+        @include respond-to(laptop) {
+            padding: 88px 80px;
+        }
+
+        @include respond-to(tablet-l) {
+            padding: 88px 40px;
+        }
+    }
+
+    &-close {
+        position: absolute;
+        right: 32px;
+        top: 32px;
+        width: 15px;
+        height: 2px;
+
+        div {
+            position: relative;
+            width: 20px;
+            height: 2px;
+            transform: rotate(45deg);
+            background: map.get($colors, text1);
+
+            &::after {
+                position: absolute;
+                content: '';
+                display: block;
+                width: inherit;
+                height: inherit;
+                background: inherit;
+                transform: rotate(-90deg);
+
+            }
+        }
+    }
+
+    &-name {
+        margin-bottom: 28px;
+    }
+
+    &-inner {
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 165%;
+        color: map.get($colors, text1);
+    }
+
+    &-overlay {
+        display: none;
+        position: fixed;
+        content: '';
+        height: 100vh;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: black;
+        z-index: 10000;
+        opacity: .85;
+    }
+}

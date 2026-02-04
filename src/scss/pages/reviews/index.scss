@@ -1,7 +1,10 @@
 @use '../../main.scss' as *;
 @use './reviews.scss';
+@use './review-modal.scss';
 
 .reviews {
+    position: relative;
+
     &__wrap {
         .mission__segments {
             background: linear-gradient(90deg, #e8fafa 0%, #dcf2e8 100%);
