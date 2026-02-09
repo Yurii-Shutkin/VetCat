@@ -1,14 +1,19 @@
 @use 'sass:map';
 @use '../../../base/vars' as *;
+@use '../../../mixins/respond-to' as *;
 
 .text-card {
     padding: 28px 32px 0 32px;
     width: 100%;
     max-width: 344px;
-    height: 240px;
     border-radius: 8px;
     background: linear-gradient(90deg, #e8fafa 0%, #dcf2e8 100%);
     margin: 0 auto;
+
+    @include respond-to(tablet-l) {
+        height: auto;
+        margin-top: 30px;
+    }
 
     &:hover {
         background: map.get($colors, primary);
@@ -23,9 +28,42 @@
 
         .text-card__link {
             display: block;
+
+            path {
+                stroke: map.get($colors, white1);
+            }
         }
 
         transition: all .3s ease;
+
+        @include respond-to(tablet-l) {
+            background: linear-gradient(90deg, #e8fafa 0%, #dcf2e8 100%);
+
+            .text-card__title {
+                color: map.get($colors, text1);
+
+            }
+
+            .text-card__desc {
+                color: map.get($colors, text1);
+
+            }
+
+            .text-card__link {
+                svg {
+                    path {
+                        stroke: map.get($colors, primary)
+                    }
+                }
+            }
+        }
+    }
+
+    &__content {
+        min-height: 212px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
 
@@ -50,10 +88,26 @@
         font-weight: 700;
         display: none;
         text-align: end;
+        padding-bottom: 20px;
         color: map.get($colors, white1);
+
+        @include respond-to(tablet-l) {
+            display: block;
+            color: map.get($colors, primary);
+        }
     }
 
     &__svg-arrow {
         display: inline-block;
+
+        @include respond-to(laptop-l) {
+            margin-left: 10px;
+
+            svg {
+                path {
+                    stroke: map.get($colors, primary)
+                }
+            }
+        }
     }
 }

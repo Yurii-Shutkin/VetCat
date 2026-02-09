@@ -33,7 +33,7 @@ export function initTeamSwiper() {
         spaceBetween: 20,
       },
       1200: {
-        slidesPerView: 2.6,
+        slidesPerView: 2.2,
         spaceBetween: 20,
       },
       1800: {

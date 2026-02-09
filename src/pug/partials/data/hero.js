@@ -20,4 +20,7 @@ module.exports = {
   vetCatLayout: {
     title: 'Ветеренарный центр «ВетКэт»',
   },
+  shedule: {
+    title: 'Расписание работы',
+  },
 };

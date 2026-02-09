@@ -40,7 +40,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].[contenthash].js',
-    publicPath: './', 
+    publicPath: '/', 
     clean: true,
   },
 
@@ -106,7 +106,7 @@ module.exports = {
     hot: true,
     historyApiFallback: {
       rewrites: [
-        { from: /^\/$/, to: '/main/index.html' },
+        { from: /^\/$/, to: '/index.html' },
       ],
     },
     watchFiles: [

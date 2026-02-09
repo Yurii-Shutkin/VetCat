@@ -1,6 +1,7 @@
 include ../../partials/mixins/ui/swiper/_swiper.pug
 include ../../partials/mixins/ui/cards/_team-card.pug
 
+
 .team
     .container-content
         .team__header
@@ -9,6 +10,8 @@ include ../../partials/mixins/ui/cards/_team-card.pug
             .main-services__buttons 
                 button.button.button--green
                     a(href="#") График работы врачей
+            include ../../partials/components/ui/swiper-prompt.pug
+            
     .team-services__slider 
         .container-content
             +swiper('team-swiper', 'team-next', 'team-prev')

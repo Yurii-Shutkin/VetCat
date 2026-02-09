@@ -1,0 +1,24 @@
+extends ../../partials/components/main-layout/main-layout.pug
+
+block head
+    include ../../partials/mixins/_head.pug
+    +head('shedule')
+
+block content
+    include ../../partials/components/svg-arrow/_svg-arrow.pug
+    .services__wrap 
+        include ../../partials/mixins/_hero.pug
+        +hero(hero.shedule.title)
+            .breadcrumbs
+                a(href="/") Главная 
+                <svg class="icon">
+                    <use href="#icon-arrow"></use>
+                </svg>
+                a.current-page(href="/shedule") График работы
+        include ../../partials/mixins/ui/_segment-buttons.pug
+        .container-content
+            +segment-buttons()
+                a.segment-item.segment-item--active(data-tab='strogino')
+                    | Строгино
+                a.segment-item(data-tab='donskoy')
+                    | Донской

@@ -1,6 +1,7 @@
 @use 'sass:map';
 @use '../../../base/vars' as *;
 @use '../../../mixins/respond-to.scss' as *;
+@use './swiper-prompt.scss';
 
 .swiper {
     &-container {
@@ -54,6 +55,10 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+
+        @include respond-to(tablet-l) {
+            display: none;
+        }
     }
 
     &-custom-prev-arrow {

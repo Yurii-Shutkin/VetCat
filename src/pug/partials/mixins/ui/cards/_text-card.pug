@@ -1,8 +1,9 @@
 mixin text-card(content = [])
     .text-card 
         .text-card__content 
-            h5.text-card__title=content.title 
-            span.text-card__desc=content.desc 
+            .text-card__content-wrap
+                h5.text-card__title=content.title 
+                span.text-card__desc=content.desc 
             .text-card__link 
                 a(href="#") Подробнее
                 .text-card__svg-arrow 

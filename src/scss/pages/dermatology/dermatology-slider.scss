@@ -1,5 +1,11 @@
+@use '../../mixins/respond-to' as *;
+
 .dermatology-slider {
     margin-bottom: 164px;
+
+    @include respond-to(tablet-l) {
+        margin-top: 30px;
+    }
 
     &__header {
         display: flex;

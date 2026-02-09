@@ -1,10 +1,13 @@
 @use 'sass:map';
+@use '../../../mixins/respond-to' as *;
 @use '../../../base/vars' as *;
 
 .pet-card {
-    // width: 100%;
-    // max-width: 248px;
-    // margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
 
     &:hover {
         .pet-card__title {
@@ -27,10 +30,10 @@
 
     &__img-wrap {
         position: relative;
-        width: 248px;
-        height: 248px;
+        width: fit-content; // адаптивная ширина
+        aspect-ratio: 1 / 1;
         border-radius: 8px;
-        margin-bottom: 16px;
+        margin-bottom: -3px;
 
         &::after {
             position: absolute;
@@ -43,7 +46,8 @@
             background: map.get($colors, darken);
             opacity: 0;
             border-radius: 8px;
-            width: fit-content;
+            width: 100%;
+            height: 100%;
         }
     }
 
@@ -51,6 +55,11 @@
         margin-bottom: 12px;
         text-wrap: wrap;
         cursor: pointer;
+
+        @media (max-width: 1910px) {
+            text-align: center;
+
+        }
     }
 
     &__date {
@@ -58,11 +67,12 @@
         font-size: 14px;
         line-height: 143%;
         color: map.get($colors, text3);
+
+        @media (max-width: 1910px) {
+            display: block;
+            margin: 0 auto;
+            width: fit-content;
+        }
     }
 
-    .swiper-slide {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-    }
 }

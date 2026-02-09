@@ -9,6 +9,7 @@ include ../../partials/mixins/ui/cards/_pet-card.pug
             .main-servstories__buttons 
                 button.button.button--green
                     a(href="#") Читать все истории
+            include ../../partials/components/ui/swiper-prompt.pug
     .stories-services__slider 
         .container-content
             +swiper('stories-swiper', 'stories-next', 'stories-prev')
@@ -16,4 +17,4 @@ include ../../partials/mixins/ui/cards/_pet-card.pug
                     .swiper-slide 
                         +pet-card(slide)
     .stories-bg-cat 
-        img(src="./img/main/history-bg.png", alt="bg-cat")
+        img(src="/img/main/history-bg.png", alt="bg-cat")

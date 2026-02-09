@@ -20,9 +20,9 @@ block content
         .advisable__segments 
             .container-content
                 +segment-buttons()
-                    a(href="/stories").segment-item.segment-item--active(data-tab='stories')
+                    a(href="/stories" data-tab='stories').segment-item.segment-item--active
                         | Истории пациентов
-                    a(href="/posts").segment-item(data-tab='posts')
+                    a(href="/posts" data-tab='posts').segment-item
                         | Статьи
     include ./stories.pug
     include ../../partials/components/footer/footer.pug

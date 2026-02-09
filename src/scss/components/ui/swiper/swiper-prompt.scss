@@ -1,0 +1,27 @@
+@use 'sass:map';
+@use '../../../base/vars' as *;
+@use '../../../mixins/respond-to.scss' as *;
+
+.swiper-prompt {
+    display: none;
+
+    @include respond-to(tablet-l) {
+        display: block;
+        margin-left: auto;
+        width: fit-content;
+
+    }
+
+    span {
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        color: map.get($colors, text1);
+
+        svg {
+            width: 20px;
+            height: 8px;
+            margin-left: 15px;
+        }
+    }
+}
