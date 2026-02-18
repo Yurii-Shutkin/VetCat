@@ -14,6 +14,7 @@
 @use './components/ui/cards/price-card.scss';
 @use './components/ui/cards/gallery-card.scss';
 @use './components/ui/form/form.scss';
+@use './components/ui/modals/date-picker.scss';
 @use './components/ui/modals/review-modal-form.scss';
 @use './components/ui/tab/tab.scss';
 @use './components/ui/swiper/swiper.scss';
@@ -87,10 +88,15 @@ h6 {
     }
 
     &-content {
+        width: 100%;
+        max-width: 1619px;
         padding: 0 253px 0 254px;
 
-        @include respond-to(laptop-l) {
+        @media (max-width: 1919px) {
+            max-width: 1232px;
             padding: 0 60px;
+            margin: 0 auto;
+
         }
 
         @include respond-to(tablet) {

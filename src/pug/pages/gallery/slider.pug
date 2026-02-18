@@ -18,9 +18,10 @@
                             </svg>  
                     .swiper.main-swiper
                         .swiper-wrapper
-                            each img in sliderData
-                                .swiper-slide
-                                    img(src=img.imgUrl alt="Product")
+                            if galleryData && galleryData.length && galleryData[0].photos
+                                each photo in galleryData[0].photos
+                                    .swiper-slide
+                                        img(src=photo alt="Product")
                     button.custom.custom-next(type="button")
                         span.icon-arrow-right
                             <svg width="17" height="28" viewBox="0 0 17 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -29,9 +30,10 @@
 
                 .swiper.thumbs-swiper
                     .swiper-wrapper
-                        each img in sliderData
-                            .swiper-slide
-                                img(src=img.imgUrl alt="Thumb")
+                        if galleryData && galleryData.length && galleryData[0].thumbnails
+                            each thumb in galleryData[0].thumbnails
+                                .swiper-slide
+                                    img(src=thumb alt="Thumb")
 .modal-slider-overview
     .modal-slider-close 
             div

@@ -1,0 +1,96 @@
+@use 'sass:map';
+@use '../../base/vars' as *;
+@use '../../main.scss';
+@use '../reviews/reviews.scss';
+@use '../reviews/index.scss';
+@use './appointment-modal.scss';
+
+.employee {
+    background: linear-gradient(90deg, #e8fafa 0%, #dcf2e8 100%);
+
+    &__hero {
+        display: flex;
+        justify-content: space-between;
+        padding: 57px 0 78px 0;
+        gap: 50px;
+        flex-wrap: wrap;
+
+        &-rightside {
+            padding-top: 43px;
+        }
+    }
+
+    &__title {
+        width: 100%;
+        max-width: 496px;
+        margin-bottom: 10px;
+    }
+
+    &__position {
+        margin-bottom: 22px;
+
+        span {
+            display: block;
+            font-weight: 400;
+            font-size: 26px;
+            line-height: 138%;
+            color: map.get($colors, text2);
+        }
+    }
+
+    h4 {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 150%;
+        color: map.get($colors, text1);
+        margin-bottom: 10px;
+    }
+
+    &__specialisations {
+
+        &-wrap {
+            margin-bottom: 40px;
+        }
+
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    &__specialisation {
+        padding: 7px 14px 9px 14px;
+        background: map.get($colors, white1);
+
+        span {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            text-align: center;
+            color: map.get($colors, text1);
+        }
+    }
+
+    &__photo {
+        margin-bottom: 10px;
+    }
+
+    &__reviews-count {
+        display: flex;
+        align-items: center;
+        max-width: fit-content;
+        margin: 0 auto;
+
+        span {
+            margin-left: 8px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            text-align: center;
+            color: map.get($colors, dark-primary)
+        }
+    }
+
+    .reviews {
+        background: linear-gradient(90deg, #e8fafa 0%, #dcf2e8 100%);
+    }
+}

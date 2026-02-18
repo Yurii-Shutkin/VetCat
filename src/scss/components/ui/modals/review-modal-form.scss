@@ -1,4 +1,5 @@
 @use 'sass:map';
+@use '../../../mixins/respond-to.scss' as *;
 @use '../../../base/vars' as *;
 
 .review-modal {
@@ -11,12 +12,20 @@
     background: map.get($colors, white1);
     border-radius: 26px;
     z-index: 10000;
+    width: 100%;
+    max-width: 608px;
 
-    &__close {}
+    @include respond-to(tablet-l) {
+        padding: 30px 25px;
+    }
 
     &__wrap {
         width: 100%;
         max-width: 448px;
+
+        @include respond-to(tablet-l) {
+            margin: 0 auto;
+        }
     }
 
     &__title {
@@ -24,15 +33,76 @@
     }
 
     &__select {
+        position: relative;
         margin-bottom: 24px;
 
         label {
             display: block;
         }
+
+        .select-arrow {
+            position: absolute;
+            right: 22px;
+            bottom: 20px;
+            z-index: -1;
+        }
+
+        select {
+            cursor: pointer;
+
+            &:active,
+            &:focus {
+                .select-arrow {
+                    transform: rotate(180deg);
+                }
+            }
+
+            @include respond-to(mobile) {
+                font-size: 14px;
+            }
+        }
     }
 
     &__textarea {
         margin-bottom: 24px;
+    }
+
+    &__checkbox {
+        input {
+            position: relative;
+            bottom: -3px;
+            width: 18px;
+            height: 18px;
+            border: 1px solid map.get($colors, borders);
+            border-radius: 2px;
+            margin-right: 5px;
+        }
+
+        input+label {
+            position: relative;
+            gap: 8px;
+            cursor: pointer;
+
+            svg {
+                position: absolute;
+                display: inline-block;
+                left: -23px;
+                top: 7px;
+                opacity: 0;
+            }
+
+            span {
+                color: map.get($colors, text);
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+
+        input:checked+label {
+            svg {
+                opacity: 1;
+            }
+        }
     }
 
     &__inputs-block {
@@ -46,10 +116,24 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+
+        @include respond-to(mobile) {
+            gap: 0;
+        }
 
         input {
             width: 100%;
             max-width: 272px;
+
+            @include respond-to(tablet) {
+                max-width: 100%;
+            }
+        }
+
+        label {
+            width: 152px;
         }
     }
 
@@ -57,18 +141,11 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
     }
 
-    &__overview {
-        position: fixed;
-        content: '';
+    &__overlay {
         display: none;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background: map.get($colors, darken);
-        opacity: .9;
-        z-index: 9999;
     }
 }

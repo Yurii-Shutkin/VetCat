@@ -1,0 +1,15 @@
+mixin review(content)
+    .review 
+        .review__content
+            .review__name 
+                h5=content.name
+            .review__inner
+                p=content.review
+        .review__meta 
+            .review__date 
+                span=content.date
+            .review__expand-btn 
+                button Читать полностью
+                <svg class="icon">
+                    <use href="#icon-arrow"></use>
+                </svg>

@@ -5,6 +5,12 @@ const modal = document.querySelector('.reviews__modal');
 const modalOverview = document.querySelector('.reviews__modal-overlay');
 const modalCloseBtn = document.querySelector('.reviews__modal-close')
 
+const modalForm = document.querySelector('.review-modal');
+const modalFormOverview = document.querySelector('.review-modal__overlay');
+const modalFormTriggerBtn = document.querySelector('.review-button');
+const modalFormCloseBtn = document.querySelector('.review-modal__close');
+
+
 reviews.forEach(review  => {
   const h5 = review.querySelector('.review__name');
   const p = review.querySelector('.review__inner');
@@ -33,7 +39,6 @@ modalCloseBtn.addEventListener('click', () => {
   modal.style.display = 'none';
   modalOverview.style.display = 'none';
   body.style.overflow = 'auto'   
-
 })
 
 modalOverview.addEventListener('click', () => {
@@ -41,3 +46,21 @@ modalOverview.addEventListener('click', () => {
   modalOverview.style.display = 'none';
   body.style.overflow = 'auto'   
 })
+
+modalFormTriggerBtn ? modalFormTriggerBtn.addEventListener('click', () => {
+  body.style.overflow = 'hidden'   
+  modalForm.style.display = 'block';
+  modalFormOverview.style.display = 'block';
+}) : null;
+
+modalFormCloseBtn ? modalFormCloseBtn.addEventListener('click', () => {
+  modalForm.style.display = 'none';
+  modalFormOverview.style.display = 'none';
+  body.style.overflow = 'auto'   
+}) : null;
+
+modalFormOverview ? modalFormOverview.addEventListener('click', () => {
+  modalForm.style.display = 'none';
+  modalFormOverview.style.display = 'none';
+  body.style.overflow = 'auto'   
+}) : null; 

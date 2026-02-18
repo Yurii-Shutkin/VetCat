@@ -55,6 +55,16 @@
             max-width: 728px;
         }
 
+        &:nth-child(2) {
+            width: 100%;
+            max-width: 344px;
+
+            @media(max-width: 1540px) {
+                max-width: unset;
+                width: 100%;
+            }
+        }
+
         &:first-child,
         &:last-child {
             @media(max-width: 1540px) {

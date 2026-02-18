@@ -8,12 +8,12 @@ include ../../partials/mixins/ui/cards/_pet-card.pug
                 h2 Истории больших и маленьких пациентов, которым мы помогли
             .main-servstories__buttons 
                 button.button.button--green
-                    a(href="#") Читать все истории
+                    a(href="/stories") Читать все истории
             include ../../partials/components/ui/swiper-prompt.pug
     .stories-services__slider 
         .container-content
             +swiper('stories-swiper', 'stories-next', 'stories-prev')
-                each slide in petCardData.slider 
+                each slide in storiesCardData
                     .swiper-slide 
                         +pet-card(slide)
     .stories-bg-cat 

@@ -88,8 +88,10 @@
         font-weight: 700;
         display: none;
         text-align: end;
-        padding-bottom: 20px;
         color: map.get($colors, white1);
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
 
         @include respond-to(tablet-l) {
             display: block;
