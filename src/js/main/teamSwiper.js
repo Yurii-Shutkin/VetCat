@@ -19,6 +19,8 @@ export function initTeamSwiper() {
       prevEl: '.team-prev',
     },
 
+    watchOverflow: false,
+
     breakpoints: {
       460: {
         slidesPerView: 1.2,

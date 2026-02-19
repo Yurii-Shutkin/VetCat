@@ -18,6 +18,7 @@ export function initSwiper() {
       nextEl: '.main-next',
       prevEl: '.main-prev',
     },
+    watchOverflow: false,
 
     breakpoints: {
       460: {

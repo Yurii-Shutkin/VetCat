@@ -19,6 +19,8 @@ export function initPetSwiper() {
       prevEl: '.stories-prev',
     },
 
+    watchOverflow: false,
+
     breakpoints: {
       460: {
         slidesPerView: 1.2,
