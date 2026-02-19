@@ -9,6 +9,10 @@
         line-height: 150%;
         color: map.get($colors, text2);
         margin-bottom: 6px;
+
+        @include respond-to(mobile) {
+            font-size: 12px;
+        }
     }
 
     span {
@@ -16,6 +20,10 @@
         font-size: 14px;
         line-height: 143%;
         color: map.get($colors, text2);
+
+        @include respond-to(mobile) {
+            font-size: 12px;
+        }
     }
 
     &__select {
@@ -59,10 +67,30 @@
             height: 40px;
             padding: 8px 0 12px 16px;
 
+            @include respond-to(mobile) {
+                height: 30px;
+                padding: 2px 10px;
+                font-size: 14px;
+            }
+
         }
 
         span {
             display: block;
+        }
+    }
+
+    &__submit {
+
+        @include respond-to(mobile) {
+            width: 100%;
+        }
+
+        &-button {
+            @include respond-to(mobile) {
+                padding: 10px 12px;
+                width: 100%;
+            }
         }
     }
 }

@@ -34,7 +34,7 @@
                 label(for="review") Сообщение 
                     span (необязательно)
                     span.db Можете описать проблему вашего питомца или указать специалиста, к которому хотите попасть на прием
-                textarea(name="review" id="appointment-review")
+                textarea.appointment-modal__textarea-input(name="review" id="appointment-review")
             .appointment-modal__footer 
                 .appointment-modal__checkbox.form__checkbox 
                     input(type="checkbox", name="checkbox", id="appointment-checkbox", required)
@@ -45,6 +45,6 @@
                         span Я согласен с 
                         | условиями обработки персональных данных
                 .appointment-modal__submit.form__submit 
-                    button.button.button--green(type="submit") Записаться
+                    button.button.button--green.form__submit-button(type="submit") Записаться
 
     
