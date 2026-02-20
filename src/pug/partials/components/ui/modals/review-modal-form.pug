@@ -6,14 +6,22 @@
         .review-modal__title
             h2 Оставить отзыв
         form.review-modal__form.form
-            .review-modal__select.form__select
-                label(for="doctor") Специалист
-                    .select-arrow 
-                        <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M14.707 0.707031C14.707 0.707031 9.70703 5.70703 7.70703 8.70703C5.70703 5.70703 0.707031 0.707031 0.707031 0.707031" stroke="#292D33" stroke-width="2" />
-                        </svg>
-                select(id='doctor', name="doctor")
-                    option(value='', selected) 
+            .select
+                .select__wrapper    
+                    label Специалист
+                    button.select__control(type='button')
+                        span.select__value Выберите специалиста
+                        .select__arrow 
+                            <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14.707 0.707031C14.707 0.707031 9.70703 5.70703 7.70703 8.70703C5.70703 5.70703 0.707031 0.707031 0.707031 0.707031" stroke="#292D33" stroke-width="2" />
+                            </svg>
+                    .select__dropdown
+                        //- button(type="button").select__option 
+                        //-     | value 1
+                        //- button(type="button").select__option 
+                        //-     | value 2
+                        //- button(type="button").select__option 
+                        //-     | value 3
             .review-modal__textarea.form__textarea
                 label(for="review") 
                 textarea(name="review" id="review" required)
