@@ -1,1 +1,8 @@
 @use '../../main.scss' as *;
+@use './calendar.scss';
+
+.schedule {
+    &__wrap {
+        margin-bottom: 30px;
+    }
+}

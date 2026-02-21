@@ -8,7 +8,7 @@ async function postAppointment() {
     const descInput = document.getElementById('appointment-review');
 
     
-    const STRAPI_URL = 'https://usable-trust-8c353f5555.strapiapp.com';     
+    const STRAPI_SERVER_URL = 'http://localhost:1337';     
 
     phoneInput.addEventListener("input", () => {
       phoneInput.value = phoneInput.value.replace(/[^0-9+]/g, "");
@@ -29,7 +29,7 @@ async function postAppointment() {
         };
 
         try {
-            const response = await fetch(STRAPI_URL + '/api/appointments', {
+            const response = await fetch(STRAPI_SERVER_URL + '/api/appointments', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ data: appointmentData }),

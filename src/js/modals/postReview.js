@@ -6,12 +6,12 @@ async function postReview() {
     const nameInput = document.getElementById('name');
     const reviewInput = document.getElementById('review');
     const mailInput = document.getElementById('mail');
-    const STRAPI_URL = 'https://usable-trust-8c353f5555.strapiapp.com/api/teams?populate=reviews';     
+    const STRAPI_SERVER_URL = 'http://localhost:1337';     
 
     let employeeId = null;
 
     try {
-        const response = await fetch(STRAPI_URL);
+        const response = await fetch(`${STRAPI_SERVER_URL}/api/teams?populate=reviews`);
         const { data } = await response.json(); 
 
         data.forEach(item => {
@@ -47,7 +47,7 @@ async function postReview() {
         };
 
         try {
-            const response = await fetch('https://usable-trust-8c353f5555.strapiapp.com/api/reviews?populate=team', {
+            const response = await fetch(`${STRAPI_SERVER_URL}/api/reviews?populate=team`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ data: reviewData }),

@@ -1,4 +1,5 @@
 extends ../../partials/components/main-layout/main-layout.pug
+include ./_calendar.pug
 
 block head
     include ../../partials/mixins/_head.pug
@@ -6,7 +7,7 @@ block head
 
 block content
     include ../../partials/components/svg-arrow/_svg-arrow.pug
-    .services__wrap 
+    .schedule__wrap 
         include ../../partials/mixins/_hero.pug
         +hero(hero.shedule.title)
             .breadcrumbs
@@ -22,3 +23,15 @@ block content
                     | Строгино
                 a.segment-item(data-tab='donskoy')
                     | Донской
+    .schedule__container
+        +calendar()
+                h2 Терапия
+        +calendar()
+                h2 Ультразвуковая диагностика
+        +calendar()
+                h2 Кардиология
+        +calendar()
+                h2 Хирургия
+    include ../../partials/components/footer/footer.pug
+
+
