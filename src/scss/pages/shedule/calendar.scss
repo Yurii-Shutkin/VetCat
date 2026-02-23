@@ -16,13 +16,16 @@
 
 .schedule__top {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     margin-bottom: -73px;
     position: relative;
     width: 100%;
     max-width: 240px;
     height: 35px;
+
+    svg {
+        margin-right: 9px;
+    }
 
     h2 {
         position: relative;
@@ -112,7 +115,8 @@
 .schedule__day small {
     display: block;
     color: #888;
-    font-size: 12px;
+    font-size: 11px;
+    font-weight: 400;
 }
 
 .schedule__day .month {

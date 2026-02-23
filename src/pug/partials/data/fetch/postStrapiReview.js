@@ -14,7 +14,6 @@ async function postStrapiReview(endpoint, reviewData) {
         data: reviewData
       }) 
     }); 
-  
     const data = await res.json();
     console.log('Review posted:', data);
 }

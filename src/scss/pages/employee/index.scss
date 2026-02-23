@@ -4,6 +4,7 @@
 @use '../reviews/reviews.scss';
 @use '../reviews/index.scss';
 @use './appointment-modal.scss';
+@use '../shedule/calendar.scss';
 
 .employee {
     background: linear-gradient(90deg, #e8fafa 0%, #dcf2e8 100%);
@@ -11,7 +12,7 @@
     &__hero {
         display: flex;
         justify-content: space-between;
-        padding: 57px 0 78px 0;
+        padding: 54px 0 78px 0;
         gap: 50px;
         flex-wrap: wrap;
 
@@ -88,6 +89,29 @@
             text-align: center;
             color: map.get($colors, dark-primary)
         }
+    }
+
+    .schedule {
+        padding-top: 63px;
+    }
+
+    .schedule__top {
+        top: 12px;
+        padding-left: 4px;
+    }
+
+    .schedule__header {
+        border-bottom: 0;
+    }
+
+    .schedule__doctor {
+        visibility: hidden;
+        padding: 0;
+    }
+
+    .schedule__day {
+        padding: 48px 0 22px 0;
+        margin-bottom: 3px;
     }
 
     .reviews {

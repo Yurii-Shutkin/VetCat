@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const selectValue = document.querySelector(".select__value");
   const selectDropdown = document.querySelector(".select__dropdown");
 
+
   let selectedItem = null;
 
   selectControl.addEventListener("click", () => {
@@ -13,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   selectDropdown.addEventListener("click", (e) => {
     const option = e.target.closest(".select__option");
+    
     if (!option) return;
 
     const activeItem = selectDropdown.querySelector(".select__option-active");

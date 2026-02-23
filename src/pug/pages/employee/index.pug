@@ -47,6 +47,12 @@ block content
                             <path d="M26.3614 17.4673H18.6882C18.3275 17.4673 18.0352 17.7597 18.0352 18.1203C18.0352 18.481 18.3275 18.7734 18.6882 18.7734H26.3614C26.7219 18.7734 27.0144 18.481 27.0144 18.1203C27.0144 17.7597 26.722 17.4673 26.3614 17.4673Z" fill="#059E8C" />
                         </svg>
                         span= `${getEmployee.reviews.length} ${getReviewWord(getEmployee.reviews.length)}` 
+        include ../shedule/_calendar.pug
+        +calendar()
+            <svg width="21" height="28" viewBox="0 0 21 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.1405 0C4.54902 0 0 4.54902 0 10.1405C0 17.0797 9.07479 27.2668 9.46116 27.6971C9.82406 28.1013 10.4577 28.1006 10.8199 27.6971C11.2063 27.2668 20.2811 17.0797 20.2811 10.1405C20.281 4.54902 15.732 0 10.1405 0ZM10.1405 15.2424C7.3273 15.2424 5.03863 12.9537 5.03863 10.1405C5.03863 7.32725 7.32736 5.03858 10.1405 5.03858C12.9537 5.03858 15.2424 7.32731 15.2424 10.1405C15.2424 12.9538 12.9537 15.2424 10.1405 15.2424Z" fill="#086358" />
+            </svg>
+            h2 Строгино
         .reviews
             .container-content
                 .reviews__header
@@ -58,3 +64,5 @@ block content
     include ../../pages/reviews/reviews-modal.pug
     include ../../partials/components/ui/modals/review-modal-form.pug
     include ../../partials/components/ui/modals/appointment-modal-form.pug
+    
+

@@ -1,4 +1,5 @@
 async function postReview() {
+    const body = document.querySelector('body');
     const modalForm = document.querySelector('.review-modal');
     const modalFormOverview = document.querySelector('.review-modal__overlay');
     // const select = document.getElementById('doctor');
@@ -6,8 +7,8 @@ async function postReview() {
     const nameInput = document.getElementById('name');
     const reviewInput = document.getElementById('review');
     const mailInput = document.getElementById('mail');
-    const STRAPI_SERVER_URL = 'http://localhost:1337';     
-
+    const STRAPI_SERVER_URL = 'http://localhost:1337';   
+    
     let employeeId = null;
 
     try {
@@ -59,6 +60,7 @@ async function postReview() {
                 form.reset();
                 modalForm.style.display = 'none';
                 modalFormOverview.style.display = 'none';
+                body.style.overflow = 'auto';
             } else {
                 console.error('Ошибка при отправке отзыва:', response.statusText);
             }

@@ -1,4 +1,4 @@
-const path = require('path');
+// const path = require('path');
 const STRAPI_SERVER_URL = 'http://localhost:1337';
 
 async function getStrapiData(endpoint, mapFn) {
