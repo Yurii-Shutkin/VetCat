@@ -2,10 +2,10 @@ import '../../scss/pages/employee/index.scss';
 import '../reviews/modal'
 import '../modals/postReview'
 import '../modals/customSelect'
-import '../modals/postAppointment'
 import '../modals/datePicker'
 import './modal'
-import ScheduleCalendar from '../shedule/calendar';'../shedule/calendar';
+import '../modals/postAppointment'
+import ScheduleCalendar from '../shedule/calendar';
 import doctors from './data';
 
 document.querySelectorAll("[data-calendar]").forEach(el => {

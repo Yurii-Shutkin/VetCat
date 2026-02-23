@@ -1,23 +1,115 @@
-async function postAppointment() {
-    const modalForm = document.querySelector('.appointment-modal');
-    const modalFormOverview = document.querySelector('.appointment-modal__overlay');
-    const nameInput = document.getElementById('appointment-name');
-    const phoneInput = document.getElementById('phone');
-    const dateInput = document.getElementById('date');
-    const petInput = document.getElementById('pet');
-    const descInput = document.getElementById('appointment-review');
+import JustValidate from 'just-validate';
 
+const body = document.querySelector('body');
+const modalForm = document.querySelector('.appointment-modal');
+const modalFormOverview = document.querySelector('.appointment-modal__overlay');
+const nameInput = document.getElementById('appointment-name');
+const phoneInput = document.getElementById('phone');
+const dateInput = document.getElementById('date');
+const petInput = document.getElementById('pet');
+const descInput = document.getElementById('appointment-review');
+
+const STRAPI_SERVER_URL = 'http://localhost:1337';     
+
+phoneInput.addEventListener("input", () => {
+  phoneInput.value = phoneInput.value.replace(/[^0-9+]/g, "");
+});
+
+const validator = new JustValidate('.appointment-modal__form');
+
+validator
+.addField(
+  '#appointment-name', [
+    {
+      rule: 'required',
+      errorMessage: 'Поле обязательно к заполнению',
+    },
+    {
+      rule: 'minLength',
+      value: 2,
+      errorMessage: 'Имя должно содержать как минимуи 2 символа',
+    },
+    {
+      rule: 'maxLength',
+      value: 15,
+      errorMessage: 'Имя не должно превышать больше, 15 символов',
+    },
+  ]
+)
+.addField(
+  '#date', [
+    {
+      rule: 'required',
+      errorMessage: 'Поле обязательно к заполнению',
+    },
+  ]
+)
+.addField(
+  '#pet', [
+    {
+      rule: 'required',
+      errorMessage: 'Поле обязательно к заполнению',
+    },
+    {
+      rule: 'minLength',
+      value: 2,
+      errorMessage: 'Имя должно содержать как минимуи 2 символа',
+    },
+    {
+      rule: 'maxLength',
+      value: 15,
+      errorMessage: 'Имя не должно превышать больше, чем 15 символов',
+    },
+  ]
+)
+.addField(
+  '#phone', [
+    {
+      rule: 'required',
+      errorMessage: 'Поле обязательно к заполнению',
+    },
+    {
+      rule: 'minLength',
+      value: 10,
+      errorMessage: 'Номер телефона должен содержать как минимуи 10 цифр',
+    },
+    {
+      rule: 'maxLength',
+      value: 13,
+      errorMessage: 'Номер телефона не может превышать значение 13 цифр',
+    },
+  ]
+)
+.addField(
+  '#pet', [
+    {
+      rule: 'required',
+      errorMessage: 'Поле обязательно к заполнению',
+    },
+    {
+      rule: 'minLength',
+      value: 2,
+      errorMessage: 'Имя должно содержать как минимуи 2 символа',
+    },
+    {
+      rule: 'maxLength',
+      value: 15,
+      errorMessage: 'Имя не должно превышать больше, чем 15 символов',
+    },
+  ]
+)
+.addField('#appointment-checkbox', [
+    {
+      rule: 'required',
+      errorMessage: 'Необходимо согласие',
+    },
+  ]
+)
+.onSuccess(async (event) => {
+    event.preventDefault(); 
+    console.log('Форма прошла валидацию');
     
-    const STRAPI_SERVER_URL = 'http://localhost:1337';     
-
-    phoneInput.addEventListener("input", () => {
-      phoneInput.value = phoneInput.value.replace(/[^0-9+]/g, "");
-    });
-
-    const form = document.querySelector('.appointment-modal__form');
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const selectedRadio = document.querySelector('input[name="affiliate"]:checked');
+    const selectedRadio = document.querySelector('input[name="affiliate"]:checked');
 
         const appointmentData = {
             name: nameInput.value,
@@ -37,16 +129,14 @@ async function postAppointment() {
 
             if (response.ok) {
                 console.log('Отзыв успешно отправлен');
-                form.reset();
+                event.target.reset();
                 modalForm.style.display = 'none';
                 modalFormOverview.style.display = 'none';
+                body.style.overflow = 'auto';
             } else {
                 console.error('Ошибка при отправке отзыва:', response.statusText);
             }
         } catch (error) {
             console.error('Ошибка при отправке отзыва:', error);
         }
-    });
-}
-
-document.addEventListener('DOMContentLoaded', postAppointment);
+  });

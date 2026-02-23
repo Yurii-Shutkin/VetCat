@@ -171,4 +171,11 @@
             }
         }
     }
+
+    .just-validate-error-label {
+        @include respond-to(mobile) {
+            margin-top: 10px;
+            font-size: 12px;
+        }
+    }
 }

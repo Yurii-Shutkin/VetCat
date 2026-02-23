@@ -202,4 +202,17 @@
             line-height: 1.5;
         }
     }
+
+    .schedule__top {
+        @media(max-width: 1310px) {
+            margin-bottom: 30px;
+        }
+    }
+
+    .schedule__header,
+    .schedule__row {
+        @media(max-width: 1310px) {
+            grid-template-columns: 0px repeat(7, 112px);
+        }
+    }
 }
