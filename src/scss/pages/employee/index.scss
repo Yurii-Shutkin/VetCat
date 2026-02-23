@@ -1,5 +1,6 @@
 @use 'sass:map';
 @use '../../base/vars' as *;
+@use '../../mixins/respond-to.scss' as *;
 @use '../../main.scss';
 @use '../reviews/reviews.scss';
 @use '../reviews/index.scss';
@@ -116,5 +117,89 @@
 
     .reviews {
         background: linear-gradient(90deg, #e8fafa 0%, #dcf2e8 100%);
+        padding-bottom: 98px;
+    }
+
+    &__about-cards {
+        background: map.get($colors, white1);
+        padding: 12px 0 116px 0;
+
+        &-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__about-card {
+        padding: 35px 56px 56px 56px;
+        width: 100%;
+        max-width: 536px;
+        border-radius: 8px;
+        background: linear-gradient(90deg, #e8fafa 0%, #dcf2e8 100%);
+
+        @include respond-to(mobile) {
+            padding: 15px;
+        }
+    }
+
+    .about-card {
+        &__content {
+            li {
+                margin-bottom: 12px;
+                list-style-type: square;
+                margin-left: 16px;
+                line-height: 1.5;
+
+                &::marker {
+                    color: map.get($colors, primary);
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        &__title {
+            margin-bottom: 26px;
+
+            @include respond-to(mobile) {
+                h3 {
+                    font-size: 23px;
+                }
+            }
+        }
+
+        &__sub-title {
+            margin-bottom: 14px;
+        }
+
+        &__sub-content {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 24px;
+            align-items: baseline;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            span {
+                letter-spacing: .4px;
+            }
+
+            @include respond-to(mobile) {
+                gap: 10px;
+                margin-left: 10px;
+                flex-wrap: wrap;
+            }
+        }
+
+        &__desc {
+            line-height: 1.5;
+        }
     }
 }
