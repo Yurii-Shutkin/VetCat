@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
     selectValue.textContent = option.textContent;
 
     selectedItem = option.textContent;
-    console.log("Selected:", selectedItem);
   });
 
   document.addEventListener("click", (e) => {

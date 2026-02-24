@@ -1,4 +1,4 @@
-const STRAPI_SERVER_URL = 'http://localhost:1337';
+const STRAPI_SERVER_URL = 'https://usable-trust-8c353f5555.strapiapp.com';
 
 async function getStrapiSingle(endpoint, mapFn) {
   const url = `${STRAPI_SERVER_URL}/api/${endpoint}`

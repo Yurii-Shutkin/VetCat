@@ -9,10 +9,10 @@ const dateInput = document.getElementById('date');
 const petInput = document.getElementById('pet');
 const descInput = document.getElementById('appointment-review');
 
-const STRAPI_SERVER_URL = 'http://localhost:1337';     
+const STRAPI_SERVER_URL = 'https://usable-trust-8c353f5555.strapiapp.com';     
 
 phoneInput.addEventListener("input", () => {
-  phoneInput.value = phoneInput.value.replace(/[^0-9+]/g, "");
+  phoneInput.value = phoneInput.value.replace(/[^0-9+]/g, "")
 });
 
 const validator = new JustValidate('.appointment-modal__form');
@@ -107,7 +107,6 @@ validator
 )
 .onSuccess(async (event) => {
     event.preventDefault(); 
-    console.log('Форма прошла валидацию');
     
     const selectedRadio = document.querySelector('input[name="affiliate"]:checked');
 
@@ -128,15 +127,15 @@ validator
             });
 
             if (response.ok) {
-                console.log('Отзыв успешно отправлен');
+                console.log('Запись успешно создана');
                 event.target.reset();
                 modalForm.style.display = 'none';
                 modalFormOverview.style.display = 'none';
                 body.style.overflow = 'auto';
             } else {
-                console.error('Ошибка при отправке отзыва:', response.statusText);
+                console.error('Ошибка при отправке формы:', response.statusText);
             }
         } catch (error) {
-            console.error('Ошибка при отправке отзыва:', error);
+            console.error('Ошибка при отправке формы:', error);
         }
   });

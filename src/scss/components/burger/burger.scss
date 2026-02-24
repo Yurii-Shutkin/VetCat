@@ -4,6 +4,7 @@
 
 .burger {
     display: none;
+    cursor: pointer;
 
     @include respond-to('laptop') {
         position: fixed;
@@ -42,6 +43,7 @@
         height: 3px;
         background-color: map.get($colors, 'white1');
         transition: 0.4s;
+        cursor: pointer;
 
         &::before,
         &::after {

@@ -5,7 +5,7 @@ async function postStrapiReview(endpoint, reviewData) {
 
   const url = STRAPI_SERVER_URL
     ? `${STRAPI_SERVER_URL}/api/${endpoint}`
-    : `http://localhost:1337/api/${endpoint}`;
+    : `https://usable-trust-8c353f5555.strapiapp.com/api/${endpoint}`;
 
     const res = await fetch(url, {  
       method: 'POST', 

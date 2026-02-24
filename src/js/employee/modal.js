@@ -8,7 +8,7 @@ const modalFormCloseBtn = document.querySelector('.appointment-modal__close');
 modalFormTriggerBtn ? modalFormTriggerBtn.addEventListener('click', () => {
   body.style.overflow = 'hidden'   
   modalForm.style.display = 'block';
-  modalFormOverview.style.display = 'block';
+  modalFormOverview.style.display = 'flex';
 }) : null;
 
 modalFormCloseBtn ? modalFormCloseBtn.addEventListener('click', () => {

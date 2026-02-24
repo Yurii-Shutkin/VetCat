@@ -184,8 +184,3 @@ class ScheduleCalendar {
 }
 
 export default ScheduleCalendar;
-
-// document.querySelectorAll("[data-calendar]").forEach(el => {
-//   new ScheduleCalendar(el, doctors);
-// });
-

@@ -16,7 +16,6 @@ reviews.forEach(review  => {
   const p = review.querySelector('.review__inner');
   const modalH = modal.querySelector('.reviews__modal-name');
   const modalP = modal.querySelector('.reviews__modal-inner');
-  console.log(body)
   review.addEventListener('click', (e) => {
 
     if (e.target.tagName === 'BUTTON') { 

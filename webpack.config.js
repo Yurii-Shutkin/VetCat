@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const STRAPI_SERVER_URL = 'http://localhost:1337';
+const STRAPI_SERVER_URL = 'https://usable-trust-8c353f5555.strapiapp.com';
 const PAGES_DIR = path.resolve(__dirname, 'src/pug/pages');
 const url = STRAPI_SERVER_URL;
 const getStrapiData = require('./src/pug/partials/data/fetch/getStrapiData');
@@ -46,7 +46,7 @@ module.exports = async () => {
     id: item.id,
   }));
 
-  const getEmployee = await getStrapiSingle('teams/uiriqjpvcgkcr3myqkrway3g?populate=*');
+  const getEmployee = await getStrapiSingle('teams/thw16xi85onkxg6z8uw6kntm?populate=*');
 
   const getReviewWord = (count) => {
     if (count % 100 >= 11 && count % 100 <= 14) {

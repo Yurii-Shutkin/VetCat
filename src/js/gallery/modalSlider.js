@@ -17,10 +17,3 @@ sliderCloseBtn.addEventListener('click', () => {
   modalSliderOverview.style.display = 'none';
   body.style.overflow = 'auto';
 })
-
-// modalSliderOverview.addEventListener('click', (e) => {
-//   // e.target.stopPropagation();
-//   sliderModal.style.display = 'none';
-//   modalSliderOverview.style.display = 'none';
-//   body.style.overflow = 'auto';
-// })
