@@ -40,6 +40,7 @@
 
         &__title {
             margin-bottom: 15px;
+            cursor: pointer;
 
             @include respond-to(tablet-l) {
                 font-size: 15px;
@@ -68,6 +69,10 @@
 
         &__title {
             margin-bottom: 5px;
+
+            a {
+                cursor: pointer;
+            }
 
             &:hover {
                 h6 {

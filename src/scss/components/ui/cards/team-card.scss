@@ -101,6 +101,11 @@
     &__about-block {
         width: 100%;
         max-width: 260px;
+
+        h5,
+        span {
+            cursor: pointer;
+        }
     }
 
     &__name {

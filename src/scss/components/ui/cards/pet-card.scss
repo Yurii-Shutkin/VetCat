@@ -13,8 +13,13 @@
     &:hover {
         .pet-card__title {
             h5 {
+                cursor: pointer;
                 color: map.get($colors, primary);
                 transition: color .3s ease;
+            }
+
+            span {
+                cursor: pointer;
             }
         }
 

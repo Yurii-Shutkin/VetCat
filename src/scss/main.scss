@@ -52,6 +52,12 @@ h6 {
     font-weight: 700;
     line-height: 117%;
     color: map.get($colors, text1);
+    cursor: default;
+}
+
+p,
+span {
+    cursor: default;
 }
 
 h2 {
